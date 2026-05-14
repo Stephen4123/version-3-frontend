@@ -7,7 +7,7 @@
       data = await window.WorkerData.fetchWorkerJson('logo', null);
     }
     if (!data) {
-      const response = await fetch('http://localhost:3000/api/public/logo');
+      const response = await fetch('https://api.jeevajyothimedia.com/api/public/logo');
       if (!response.ok) throw new Error('Failed to load logo data');
       data = await response.json();
     }

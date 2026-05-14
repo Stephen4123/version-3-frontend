@@ -7,7 +7,7 @@
       data = await window.WorkerData.fetchWorkerJson('contact', null);
     }
     if (!data) {
-      const response = await fetch('http://localhost:3000/api/public/contact');
+      const response = await fetch('https://api.jeevajyothimedia.com/api/public/contact');
       if (!response.ok) throw new Error('Failed to load contact data');
       data = await response.json();
     }

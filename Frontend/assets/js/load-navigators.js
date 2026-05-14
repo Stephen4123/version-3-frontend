@@ -7,7 +7,7 @@
       data = await window.WorkerData.fetchWorkerJson('navigators', null);
     }
     if (!data) {
-      const response = await fetch('http://localhost:3000/api/public/navigators');
+      const response = await fetch('https://api.jeevajyothimedia.com/api/public/navigators');
       if (!response.ok) throw new Error('Failed to load navigators data');
       data = await response.json();
     }

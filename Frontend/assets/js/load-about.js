@@ -7,7 +7,7 @@
       data = await window.WorkerData.fetchWorkerJson('about', null);
     }
     if (!data) {
-      const response = await fetch('http://localhost:3000/api/public/about');
+      const response = await fetch('https://api.jeevajyothimedia.com/api/public/about');
       if (!response.ok) throw new Error('Failed to load about data');
       data = await response.json();
     }

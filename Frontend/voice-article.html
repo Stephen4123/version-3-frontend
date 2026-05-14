@@ -868,7 +868,7 @@
         
         let voices = [];
         let teamMembers = [];
-          const API_BASE = 'http://localhost:3000/api/public';
+          const API_BASE = 'https://api.jeevajyothimedia.com/api/public';
           const [siteResponse, teamResponse] = await Promise.all([
           fetch(`${API_BASE}/voice/${encodeURIComponent(id)}?t=${Date.now()}`).catch(() => null),
           fetch(`${API_BASE}/board-members`).catch(() => null)

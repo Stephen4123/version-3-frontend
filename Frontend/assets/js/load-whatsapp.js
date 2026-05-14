@@ -1,5 +1,5 @@
 ﻿(function() {
-  const API_BASE = 'http://localhost:3000/api/public';
+  const API_BASE = 'https://api.jeevajyothimedia.com/api/public';
   const DEFAULT_WHATSAPP_IMAGE = 'assets/images/whatsapp.png';
   const DEFAULT_WHATSAPP_LINK = 'https://wa.me/+918078864233';
 

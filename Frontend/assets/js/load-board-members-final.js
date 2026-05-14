@@ -1,5 +1,5 @@
 ﻿(async function loadBoardMembers() {
-  const API_BASE = 'http://localhost:3000/api/public';
+  const API_BASE = 'https://api.jeevajyothimedia.com/api/public';
 
   if (window.coreTeamLoaded) return;
   window.coreTeamLoaded = true;

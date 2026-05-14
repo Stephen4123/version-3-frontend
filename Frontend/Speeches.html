@@ -210,7 +210,7 @@
         if (!grid) return;
 
         try {
-          const API_BASE = 'http://localhost:3000/api/public';
+          const API_BASE = 'https://api.jeevajyothimedia.com/api/public';
           const response = await fetch(`${API_BASE}/speeches?t=${Date.now()}`);
           const data = await response.json();
           const speeches = Array.isArray(data) ? data : (Array.isArray(data.data) ? data.data : (data.speeches || []));

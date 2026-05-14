@@ -7,7 +7,7 @@
       videos = await window.WorkerData.fetchWorkerJson('videos', []);
     }
     if (!Array.isArray(videos) || !videos.length) {
-      const response = await fetch('http://localhost:3000/api/public/videos');
+      const response = await fetch('https://api.jeevajyothimedia.com/api/public/videos');
       if (!response.ok) throw new Error('Failed to load videos data');
       const json = await response.json();
       videos = Array.isArray(json?.data) ? json.data : json;

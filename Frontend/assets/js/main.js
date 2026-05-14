@@ -643,11 +643,11 @@
 
     try {
       const [posts, team, logo, videos, site] = await Promise.all([
-        fetch(`http://localhost:3000/api/public/posts`).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
-        fetch(`http://localhost:3000/api/public/board-members`).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
-        fetch(`http://localhost:3000/api/site`).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }),
-        fetch(`http://localhost:3000/api/public/videos`).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
-        fetch(`http://localhost:3000/api/site`).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
+        fetch(`https://api.jeevajyothimedia.com/api/public/posts`).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
+        fetch(`https://api.jeevajyothimedia.com/api/public/board-members`).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
+        fetch(`https://api.jeevajyothimedia.com/api/site`).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }),
+        fetch(`https://api.jeevajyothimedia.com/api/public/videos`).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
+        fetch(`https://api.jeevajyothimedia.com/api/site`).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
       ]);
 
       posts.forEach(function (post) {

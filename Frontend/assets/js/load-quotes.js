@@ -7,7 +7,7 @@
       quotes = await window.WorkerData.fetchWorkerJson('quotes', []);
     }
     if (!Array.isArray(quotes) || !quotes.length) {
-      const response = await fetch('http://localhost:3000/api/public/quotes');
+      const response = await fetch('https://api.jeevajyothimedia.com/api/public/quotes');
       if (!response.ok) throw new Error('Failed to load quotes data');
       const json = await response.json();
       quotes = Array.isArray(json?.data) ? json.data : json;

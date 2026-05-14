@@ -1,6 +1,6 @@
 /* Program Guide (Frontend/HTML) - API only */
 (function () {
-  const API_BASE = 'http://localhost:3000/api/public';
+  const API_BASE = 'https://api.jeevajyothimedia.com/api/public';
 
   async function loadPrograms() {
     try {

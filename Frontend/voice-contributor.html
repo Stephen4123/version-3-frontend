@@ -456,7 +456,7 @@
       }
       
       try {
-        const API_BASE = 'http://localhost:3000/api/public';
+        const API_BASE = 'https://api.jeevajyothimedia.com/api/public';
         const [contributorsResponse, voicesResponse] = await Promise.all([
           fetch(`${API_BASE}/contributors?t=${Date.now()}`),
           fetch(`${API_BASE}/voices?t=${Date.now()}`)

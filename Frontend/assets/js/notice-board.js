@@ -11,7 +11,7 @@
 
   async init() {
     try {
-      const response = await fetch('http://localhost:3000/api/public/notices');
+      const response = await fetch('https://api.jeevajyothimedia.com/api/public/notices');
       const json = await response.json();
       this.notices = Array.isArray(json?.data) ? json.data : (Array.isArray(json) ? json : []);
       if (this.notices.length > 0) {
