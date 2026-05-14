@@ -26,4 +26,3 @@ router.put('/:id', protect, adminOnly, updateBoardMember);
 router.delete('/:id', protect, adminOnly, deleteBoardMember);
 
 module.exports = router;
-
