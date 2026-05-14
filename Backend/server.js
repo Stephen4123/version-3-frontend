@@ -101,7 +101,7 @@ const postRoutes = require('./routes/posts');
 const speechRoutes = require('./routes/speeches');
 const programRoutes = require('./routes/programs');
 const contributorRoutes = require('./routes/contributors');
-const boardMemberRoutes = require('./routes/boardMembers');
+const boardMemberRoutes = require('./routes/BoardMembers');
 
 // Admin Routes (with auth)
 app.use('/api/admin/auth', authRoutes);
