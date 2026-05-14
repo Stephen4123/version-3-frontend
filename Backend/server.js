@@ -10,31 +10,80 @@ const app = express();
 
 // Middleware
 app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" }
+  crossOriginResourcePolicy: { policy: 'cross-origin' },
 }));
+
+const ALLOWED_ORIGINS = (process.env.CORS_ORIGINS || 'http://localhost:5500,http://127.0.0.1:5500,http://localhost:3000,http://127.0.0.1:3000')
+  .split(',')
+  .map(s => s.trim())
+  .filter(Boolean);
+
 app.use(cors({
-  origin: ['http://localhost:5500', 'http://127.0.0.1:5500', 'http://localhost:3000', 'http://127.0.0.1:3000'],
-  credentials: true
+  origin: (origin, cb) => {
+    // allow non-browser requests (no origin)
+    if (!origin) return cb(null, true);
+    if (ALLOWED_ORIGINS.includes(origin)) return cb(null, true);
+    // allow wildcard in non-prod? keep it strict
+    return cb(new Error(`CORS blocked origin: ${origin}`));
+  },
+  credentials: true,
 }));
-app.use(morgan('dev'));
+
+app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// MongoDB Connection with your Atlas string
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 5000
-})
-.then(() => {
-  console.log('✅ MongoDB Atlas connected successfully!');
-  console.log('📊 Database: Jeevajyothimedia');
-})
-.catch(err => {
-  console.error('❌ MongoDB connection error:', err);
-  process.exit(1);
+// ---------------- Health Check (Render) ----------------
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    ok: true,
+    env: process.env.NODE_ENV || 'development',
+    timestamp: new Date().toISOString(),
+  });
 });
+
+// ---------------- MongoDB Connection (robust; never crash on startup) ----------------
+async function connectMongoWithRetry({ uri, retries = 10, minDelayMs = 1500, maxDelayMs = 8000 }) {
+  if (!uri) {
+    console.error('❌ Missing MONGODB_URI. Backend will start but APIs will fail.');
+    return;
+  }
+
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      console.log(`🔌 MongoDB connect attempt ${attempt}/${retries}...`);
+      await mongoose.connect(uri, {
+        serverSelectionTimeoutMS: 5000,
+        maxPoolSize: 10,
+      });
+
+      console.log('✅ MongoDB Atlas connected successfully!');
+      console.log('📌 Ready to serve API requests.');
+      return;
+    } catch (err) {
+      console.error(`⚠️ MongoDB connection attempt ${attempt} failed:`, err && err.message ? err.message : err);
+
+      if (attempt === retries) {
+        console.error('❌ MongoDB connection failed after retries. Backend will continue running; APIs will return errors.');
+        return;
+      }
+
+      const backoff = Math.min(maxDelayMs, minDelayMs * Math.pow(2, attempt - 1));
+      await sleep(backoff);
+    }
+  }
+}
+
+// Make production logs visible
+console.log(`
+🧩 Node env: ${process.env.NODE_ENV || 'development'}
+🧾 CORS origins: ${ALLOWED_ORIGINS.join(', ')}
+`);
+
+connectMongoWithRetry({ uri: process.env.MONGODB_URI });
 
 // Import Models
 const User = require('./models/User');
@@ -65,17 +114,12 @@ app.use('/api/admin/board-members', boardMemberRoutes);
 
 // ============ PUBLIC API ROUTES (No Auth Required) ============
 
-// ================= PUBLIC API ROUTES (No Auth Required) =================
-// NOTE: These filters were causing empty arrays because your MongoDB collections/JSON structure don’t match the assumed fields.
-// These endpoints now return ALL documents by default, with lightweight debug logging.
-
 // Get all voices
 app.get('/api/public/voices', async (req, res) => {
   try {
     console.log(`🔍 [public] GET /api/public/voices`);
     const query = { status: 'approved' };
     const voices = await Voice.find(query).sort({ date: -1 }).select('-__v').lean();
-    console.log(`✅ [public] voices found: ${voices.length} query=`, query);
     res.json({ success: true, data: voices });
   } catch (error) {
     console.error('❌ [public] voices error:', error);
@@ -113,7 +157,6 @@ app.get('/api/public/speeches', async (req, res) => {
     console.log(`🔍 [public] GET /api/public/speeches`);
     const query = { published: true };
     const speeches = await Speech.find(query).sort({ date: -1 }).lean();
-    console.log(`✅ [public] speeches found: ${speeches.length} query=`, query);
     res.json({ success: true, data: speeches });
   } catch (error) {
     console.error('❌ [public] speeches error:', error);
@@ -139,7 +182,6 @@ app.get('/api/public/programs', async (req, res) => {
     console.log(`🔍 [public] GET /api/public/programs`);
     const query = { published: true };
     const programs = await ProgramGuide.find(query).sort({ id: -1 }).lean();
-    console.log(`✅ [public] programs found: ${programs.length} query=`, query);
     res.json({ success: true, data: programs });
   } catch (error) {
     console.error('❌ [public] programs error:', error);
@@ -165,7 +207,6 @@ app.get('/api/public/posts', async (req, res) => {
     console.log(`🔍 [public] GET /api/public/posts`);
     const query = { published: true };
     const posts = await Post.find(query).sort({ publishDate: -1 }).lean();
-    console.log(`✅ [public] posts found: ${posts.length} query=`, query);
     res.json({ success: true, data: posts });
   } catch (error) {
     console.error('❌ [public] posts error:', error);
@@ -191,7 +232,6 @@ app.get('/api/public/contributors', async (req, res) => {
     console.log(`🔍 [public] GET /api/public/contributors`);
     const query = {};
     const contributors = await Contributor.find(query).sort({ order: 1 }).lean();
-    console.log(`📦 [public] contributors found: ${contributors.length} (query:`, query, ')');
     res.json({ success: true, data: contributors });
   } catch (error) {
     console.error('❌ [public] contributors error:', error);
@@ -205,7 +245,6 @@ app.get('/api/public/board-members', async (req, res) => {
     console.log(`🔍 [public] GET /api/public/board-members`);
     const query = {};
     const boardMembers = await BoardMember.find(query).sort({ order: 1 }).lean();
-    console.log(`📦 [public] boardMembers found: ${boardMembers.length} (query:`, query, ')');
     res.json({ success: true, data: boardMembers });
   } catch (error) {
     console.error('❌ [public] board-members error:', error);
@@ -223,8 +262,9 @@ app.get('/api/public/stats', async (req, res) => {
       ProgramGuide.countDocuments({}),
       Post.countDocuments({}),
       Contributor.countDocuments({}),
-      BoardMember.countDocuments({})
+      BoardMember.countDocuments({}),
     ]);
+
     res.json({
       success: true,
       data: {
@@ -233,8 +273,8 @@ app.get('/api/public/stats', async (req, res) => {
         programs: programsCount,
         posts: postsCount,
         contributors: contributorsCount,
-        boardMembers: boardCount
-      }
+        boardMembers: boardCount,
+      },
     });
   } catch (error) {
     console.error('❌ [public] stats error:', error);
@@ -242,13 +282,12 @@ app.get('/api/public/stats', async (req, res) => {
   }
 });
 
-
 // ============ ERROR HANDLING ============
 app.use((err, req, res, next) => {
-  console.error('Error:', err.stack);
+  console.error('Error:', err && err.stack ? err.stack : err);
   res.status(err.status || 500).json({
     success: false,
-    error: err.message || 'Internal server error'
+    error: (err && err.message) || 'Internal server error',
   });
 });
 
@@ -257,9 +296,13 @@ app.use('*', (req, res) => {
   res.status(404).json({ success: false, error: 'API endpoint not found' });
 });
 
+// ---------------- Listen (Render requires 0.0.0.0) ----------------
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`\n🚀 Server running on http://localhost:${PORT}`);
-  console.log(`📡 API Base URL: http://localhost:${PORT}/api`);
-  console.log(`🔐 Admin credentials: ${process.env.ADMIN_EMAIL} / ${process.env.ADMIN_PASSWORD}\n`);
+const HOST = process.env.HOST || '0.0.0.0';
+
+app.listen(PORT, HOST, () => {
+  console.log(`\n🚀 Server running on http://${HOST}:${PORT}`);
+  console.log(`📡 API paths: /api/public/* , /api/admin/*`);
+  console.log(`NODE_ENV=${process.env.NODE_ENV || 'development'}`);
 });
+
