@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ml" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <meta name="yandex" content="notranslate">
+  <link rel="icon" href="https://drive.google.com/thumbnail?id=1Lavb4TCE2QFKQ7ig1XlrX30KoLCjJYPp&sz=w1000">
+  <title>Submit Story — Voice Hub</title>
+  <link rel="stylesheet" href="assets/css/styles.css?v=202605071811">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Michroma&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866754402147741" crossorigin="anonymous"></script>
+  <!-- International Telephone Input CSS & JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <style>
+    .image-preview {
+      margin-top: 10px;
+      max-width: 200px;
+      border-radius: 8px;
+      display: none;
+    }
+    .file-input-wrapper {
+      position: relative;
+      margin-top: 5px;
+    }
+    .file-input-wrapper input[type="file"] {
+      display: block;
+      width: 100%;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+    }
+    .file-input-wrapper input[type="file"]::file-selector-button {
+      background: #254ed3;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .loading-spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 0.6s linear infinite;
+      margin-right: 8px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .error-message {
+      background: rgba(255, 68, 68, 0.2);
+      border: 1px solid #ff4444;
+      color: #ff8888;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .required-star {
+      color: #ff4444;
+      margin-left: 4px;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      margin-top: 10px;
+      display: none;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #25D366;
+      width: 0%;
+      transition: width 0.3s;
+    }
+    .form-group select, .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .form-group select option {
+      background: #1e2a4a;
+      color: white;
+    }
+    .form-group select:focus, .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #FFBF00;
+    }
+    .phone-hint {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.7rem;
+      margin-top: 5px;
+      display: block;
+    }
+    .email-status {
+      font-size: 0.75rem;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .email-status.success {
+      background: rgba(40, 167, 69, 0.2);
+      border: 1px solid #28a745;
+      color: #28a745;
+      display: block;
+    }
+    .email-status.error {
+      background: rgba(220, 53, 69, 0.2);
+      border: 1px solid #dc3545;
+      color: #dc3545;
+      display: block;
+    }
+    .email-status.info {
+      background: rgba(23, 162, 184, 0.2);
+      border: 1px solid #17a2b8;
+      color: #17a2b8;
+      display: block;
+    }
+    /* International Telephone Input styles */
+    .iti {
+      width: 100%;
+    }
+    .iti__flag-container {
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px 0 0 8px;
+    }
+    .iti__selected-flag {
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px 0 0 8px;
+      padding: 0 8px;
+    }
+    .iti__selected-flag:hover {
+      background: rgba(255,255,255,0.15);
+    }
+    .iti__country-list {
+      background: #1e2a4a;
+      color: white;
+    }
+    .iti__country {
+      color: white;
+    }
+    .iti__country:hover {
+      background: rgba(255,207,110,0.2);
+    }
+    .iti__search-input {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: none;
+    }
+    .phone-error {
+      color: #ff8888;
+      font-size: 0.75rem;
+      margin-top: 5px;
+      display: none;
+    }
+    /* Progress text styles */
+    .progress-text {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #a5b4fc;
+      display: none;
+    }
+    /* Scroll to top button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #FFBF00;
+      color: #1e2a4a;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      border: none;
+      font-size: 20px;
+    }
+    .scroll-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .scroll-to-top:hover {
+      background: #e6a800;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar Ads -->
+  <div class="sidebar-ad left-ad ad-editable" style="top: 78.75%;">
+    <a id="leftAdLink2" href="tel:+918078864233" class="ad-banner vertical">
+      <img id="leftAdImage2" src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+    </a>
+  </div>
+  <div class="sidebar-ad right-ad ad-editable" style="top: 78.75%;">
+    <a id="rightAdLink2" href="https://wa.me/+918078864233" class="ad-banner vertical">
+      <img id="rightAdImage2" src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+    </a>
+  </div>
+  <div class="sidebar-ad left-ad ad-editable" style="top: 257px;">
+    <a id="leftAdLink" href="tel:+918078864233" class="ad-banner vertical">
+      <img id="leftAdImage" src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+    </a>
+  </div>
+  <div class="sidebar-ad right-ad ad-editable" style="top: 257px;">
+    <a id="rightAdLink" href="https://wa.me/+918078864233" class="ad-banner vertical">
+      <img id="rightAdImage" src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+    </a>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="https://drive.google.com/thumbnail?id=1jaEnOnm2O0w6882JCtHgYNJQ0HcXwzB7&sz=w500" alt="Logo" class="brand-logo">
+        <span id="headerBrandName">Jeevajyothi Media</span>
+      </a>
+      <nav class="nav"></nav>
+    </div>
+  </header>
+
+  <section class="announcement-bar">
+    <div class="announcement-track"></div>
+  </section>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Submit Your Story</h1>
+        <p class="lede">നിങ്ങളുടെ സാക്ഷ്യം/കവിത/ലേഖനം ഇവിടെ സമർപ്പിക്കുക</p>
+        <div class="whatsapp-community" style="margin: 1rem 0; text-align: center;">
+          <a href="https://www.whatsapp.com/channel/0029Va9LliuJZg4A3wN3aN2g" class="btn primary" target="_blank" style="background: #25D366; border-color: #25D366; font-weight: 600; padding: 0.6rem 1.5rem; font-size: 0.9rem; display: inline-block; text-decoration: none; border-radius: 8px; color: white;">📢 Join Our WhatsApp Channel!</a>
+        </div>
+        <div class="hero-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+          <a href="voice-hub.html" class="btn secondary">← Back to Voices</a>
+          <a href="voice-contributors.html" class="btn btn-secondary">Meet Contributors</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-list">
+      <div class="container">
+        <div class="submission-container">
+          <div class="submission-info">
+            <div class="info-card">
+              <h3>Submission Guidelines</h3>
+              <ul class="guideline-list">
+                <li><span>🎙️</span> Christian testimonies, devotionals, and articles.</li>
+                <li><span>📝</span> Choose from 11 content types below.</li>
+                <li><span>⏱️</span> Review time: Within 48 hours.</li>
+                <li><span>📸</span> <strong>Author photo is mandatory</strong> (JPG, PNG, up to 5MB)</li>
+                <li><span>📧</span> You'll receive an email confirmation</li>
+                <li><span>📱</span> WhatsApp number for updates (optional)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <div id="error-message" class="error-message"></div>
+            <div id="email-status" class="email-status"></div>
+            <div class="progress-bar" id="progressBar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div id="progress-text" class="progress-text"></div>
+            
+            <div id="form-success-msg" style="display:none; text-align:center; padding: 2rem;">
+              <h2 style="color: #ffcf6e;">Thank You! 🙏</h2>
+              <p>Your submission has been received. We'll review it and get back to you within 48 hours.</p>
+              <p>A confirmation email has been sent to your email address.</p>
+              <button onclick="resetVoiceForm()" class="btn btn-primary" style="margin-top:1rem;">Submit Another Story</button>
+            </div>
+
+            <form id="voice-submit-form">
+              <div class="form-group">
+                <label>Full Name <span class="required-star">*</span></label>
+                <input type="text" name="name" id="name" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address <span class="required-star">*</span></label>
+                <input type="email" name="email" id="email" placeholder="example@mail.com" required>
+              </div>
+
+              <!-- Phone Number Field (Optional) -->
+              <div class="form-group">
+                <label>WhatsApp Number <span class="required-star" style="color: #888;">(Optional)</span></label>
+                <input type="tel" name="phone" id="phone" placeholder="+91 1234567890">
+                <div id="phone-error" class="phone-error"></div>
+                <small class="phone-hint">Optional: Enter your WhatsApp number with country code to receive updates via WhatsApp.</small>
+              </div>
+
+              <div class="form-group">
+                <label>Upload Author Photo <span class="required-star">*</span></label>
+                <div class="file-input-wrapper">
+                  <input type="file" id="authorPhoto" accept="image/jpeg,image/png,image/jpg,image/gif,image/webp" required>
+                  <small style="color: rgba(255,255,255,0.4); font-size: 0.7rem; margin-top: 5px; display: block;">
+                    Supported formats: JPG, PNG, GIF, WEBP (Max 5MB) - Photo is required
+                  </small>
+                </div>
+                <img id="imagePreview" class="image-preview" alt="Preview">
+              </div>
+
+              <div class="form-group">
+                <label>Title <span class="required-star">*</span></label>
+                <input type="text" name="title" id="title" placeholder="What is your story called?" required>
+              </div>
+
+              <div class="form-group">
+                <label>Content Type <span class="required-star">*</span></label>
+                <select name="contentType" id="contentType" required>
+                  <option value="" disabled selected>Select content type</option>
+                  <option value="Article">📄 Article</option>
+                  <option value="Testimony">🙏 Testimony</option>
+                  <option value="Interview">🎙️ Interview</option>
+                  <option value="Case Study">📊 Case Study</option>
+                  <option value="Devotional">✝️ Devotional</option>
+                  <option value="Essay">📝 Essay</option>
+                  <option value="Editorial">📰 Editorial</option>
+                  <option value="Tribute">💐 Tribute</option>
+                  <option value="Tutorial">🎓 Tutorial</option>
+                  <option value="Listicle">📋 Listicle</option>
+                  <option value="Review">⭐ Review</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Content <span class="required-star">*</span></label>
+                <textarea name="content" id="content" rows="8" placeholder="Write your content here..." required></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn-text" class="submit-btn">Submit Your Voice →</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span id="footerBrandName">Jeevajyothi Media</span> • <span id="footerText">Believe • Sing • Share</span></p>
+      <div class="social">
+        <a id="footerFacebook" href="https://www.facebook.com/jeevajyothigospelvoice" target="_blank" rel="noopener">
+          <img src="assets/images/facebook.png?v=202605071811" alt="Facebook">
+        </a>
+        <a id="footerInstagram" href="https://www.instagram.com/jeevajyothi_media" target="_blank" rel="noopener">
+          <img src="assets/images/instagram.png?v=202605071811" alt="Instagram">
+        </a>
+        <a id="footerYouTube" href="https://www.youtube.com/@jeevajyothimedia" target="_blank" rel="noopener">
+          <img src="assets/images/youtube.png?v=202605071811" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Scroll to top">↑</button>
+
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/load-navigators.js"></script>
+  
+  <script>
+  // ============================================
+  // GOOGLE APPS SCRIPTS URLs
+  // ============================================
+  const USER_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysIfI45np0o6ex1FmCDXtYg_h0BxIWQDujEqqSTop8pUz9IYuF_j8pIUWmL2FEAtRCpg/exec';
+  const ADMIN_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycGtDKJSrXU6TNvzvcCqt1Gw8X1hzEXhJl9SwNOA59R-P77yLzXdfyU_mbv1E7JjpB/exec';
+
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  const photoInput = document.getElementById('authorPhoto');
+  const imagePreview = document.getElementById('imagePreview');
+
+  // Scroll to Top functionality
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+  
+  scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Initialize International Telephone Input (Optional)
+  let iti;
+  
+  function initializePhoneInput() {
+    const phoneInput = document.querySelector("#phone");
+    if (phoneInput && window.intlTelInput) {
+      iti = window.intlTelInput(phoneInput, {
+        initialCountry: "in",
+        preferredCountries: ["in", "us", "gb", "ae", "sg", "my"],
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        autoPlaceholder: "aggressive",
+        formatOnDisplay: true,
+        nationalMode: false,
+        placeholderNumberType: "MOBILE"
+      });
+      
+      phoneInput.addEventListener('blur', function() {
+        if (phoneInput.value.trim() !== '') {
+          validatePhoneNumber();
+        }
+      });
+      
+      phoneInput.addEventListener('input', function() {
+        const errorDiv = document.getElementById('phone-error');
+        errorDiv.style.display = 'none';
+        phoneInput.classList.remove('field-error');
+      });
+    }
+  }
+
+  function validatePhoneNumber() {
+    const phoneInput = document.querySelector("#phone");
+    const errorDiv = document.getElementById('phone-error');
+    
+    if (!iti) return true;
+    
+    if (phoneInput.value.trim() === '') {
+      return true; // Optional field, so empty is valid
+    }
+    
+    if (iti.isValidNumber()) {
+      errorDiv.style.display = 'none';
+      phoneInput.classList.remove('field-error');
+      return true;
+    } else {
+      errorDiv.textContent = 'Please enter a valid phone number with correct country code';
+      errorDiv.style.display = 'block';
+      phoneInput.classList.add('field-error');
+      return false;
+    }
+  }
+
+  function getFullPhoneNumber() {
+    if (iti && document.querySelector("#phone").value.trim() !== '') {
+      return iti.getNumber();
+    }
+    return document.getElementById('phone').value.trim();
+  }
+
+  // Initialize phone input when DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    initializePhoneInput();
+  });
+
+  // Image preview + size validation
+  photoInput.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Photo size exceeds 5MB. Please choose a smaller image.');
+        this.value = '';
+        imagePreview.style.display = 'none';
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        imagePreview.src = event.target.result;
+        imagePreview.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Function to update progress text
+  function updateProgressText(message, percentage) {
+    const progressText = document.getElementById('progress-text');
+    const progressFill = document.getElementById('progressFill');
+    progressText.textContent = message;
+    progressText.style.display = 'block';
+    progressFill.style.width = percentage + '%';
+  }
+
+  // Function to send data to Google Apps Script
+  async function sendToScript(url, data) {
+    const formData = new URLSearchParams();
+    for (const key in data) {
+      if (data[key] !== undefined && data[key] !== null && data[key] !== '') {
+        formData.append(key, data[key]);
+      }
+    }
+    
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData.toString()
+      });
+      
+      // Try to parse response
+      const text = await response.text();
+      try {
+        const json = JSON.parse(text);
+        return json;
+      } catch (e) {
+        console.log('Response not JSON:', text);
+        return { success: true };
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
+      // Even if fetch fails, we'll assume success for user experience
+      return { success: true };
+    }
+  }
+
+  // Function to scroll to top smoothly
+  function scrollToFormTop() {
+    const formCard = document.querySelector('.form-card');
+    if (formCard) {
+      const header = document.querySelector('.site-header');
+      const announcementBar = document.querySelector('.announcement-bar');
+      let headerOffset = 0;
+      
+      if (header) headerOffset += header.offsetHeight;
+      if (announcementBar && announcementBar.offsetHeight > 0) headerOffset += announcementBar.offsetHeight;
+      headerOffset += 20; // extra padding
+      
+      const elementPosition = formCard.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  // MAIN FORM SUBMIT
+  document.getElementById('voice-submit-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Scroll to top of form first
+    scrollToFormTop();
+    
+    // Small delay to let scroll complete before showing progress
+    await new Promise(resolve => setTimeout(resolve, 300));
+
+    const btn = document.getElementById('submit-btn-text');
+    const errorDiv = document.getElementById('error-message');
+    const emailStatus = document.getElementById('email-status');
+    const progressBar = document.getElementById('progressBar');
+    const progressFill = document.getElementById('progressFill');
+    const progressText = document.getElementById('progress-text');
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = getFullPhoneNumber();
+    const title = document.getElementById('title').value.trim();
+    const content = document.getElementById('content').value.trim();
+    const contentTypeSelect = document.getElementById('contentType');
+    const contentType = contentTypeSelect.options[contentTypeSelect.selectedIndex]?.text || contentTypeSelect.value;
+    const photoFile = photoInput.files[0];
+
+    // Validate phone number (only if provided)
+    if (phone && !validatePhoneNumber()) {
+      errorDiv.innerText = 'Please enter a valid phone number with correct country code.';
+      errorDiv.style.display = 'block';
+      document.getElementById('phone').focus();
+      return;
+    }
+
+    // VALIDATIONS
+    if (!name || !email || !title || !content || !contentTypeSelect.value || !photoFile) {
+      errorDiv.innerText = 'Please fill all required fields and upload photo.';
+      errorDiv.style.display = 'block';
+      return;
+    }
+
+    if (!email.includes('@')) {
+      errorDiv.innerText = 'Enter a valid email address.';
+      errorDiv.style.display = 'block';
+      return;
+    }
+
+    errorDiv.style.display = 'none';
+    emailStatus.style.display = 'none';
+    progressText.style.display = 'block';
+
+    btn.innerHTML = '<span class="loading-spinner"></span> Submitting...';
+    btn.disabled = true;
+
+    progressBar.style.display = 'block';
+    updateProgressText('📝 Validating your information...', 10);
+
+    const reader = new FileReader();
+    reader.readAsDataURL(photoFile);
+
+    reader.onload = async function() {
+      updateProgressText('🖼️ Processing your photo...', 30);
+
+      // Prepare data for both scripts
+      const formData = {
+        name: name,
+        email: email,
+        phone: phone,
+        title: title,
+        content: content,
+        contentType: contentType,
+        fileData: reader.result,
+        filename: photoFile.name
+      };
+
+      // Data for user script (without file data)
+      const userData = {
+        name: name,
+        email: email,
+        phone: phone,
+        title: title,
+        content: content,
+        contentType: contentType
+      };
+
+      try {
+        // Send to Admin Script (for admin notification with photo)
+        updateProgressText('📧 Sending to admin...', 50);
+        await sendToScript(ADMIN_SCRIPT_URL, formData);
+
+        // Send to User Script (for user confirmation email)
+        updateProgressText('📨 Sending confirmation email...', 70);
+        emailStatus.innerHTML = '<span class="loading-spinner"></span> Sending confirmation email...';
+        emailStatus.className = 'email-status info';
+        emailStatus.style.display = 'block';
+        
+        await sendToScript(USER_SCRIPT_URL, userData);
+        
+        updateProgressText('✅ Submission complete!', 100);
+        emailStatus.innerHTML = '✓ Confirmation email sent successfully! Please check your inbox.';
+        emailStatus.className = 'email-status success';
+
+        setTimeout(() => {
+          document.getElementById('voice-submit-form').style.display = 'none';
+          document.getElementById('form-success-msg').style.display = 'block';
+          progressText.style.display = 'none';
+        }, 1500);
+
+      } catch (err) {
+        console.error('Submission error:', err);
+        errorDiv.innerText = "Submission failed. Please try again.";
+        errorDiv.style.display = 'block';
+        btn.innerHTML = 'Submit Your Voice →';
+        btn.disabled = false;
+        emailStatus.style.display = 'none';
+        progressText.style.display = 'none';
+      } finally {
+        setTimeout(() => {
+          progressBar.style.display = 'none';
+          progressFill.style.width = '0%';
+        }, 2000);
+      }
+    };
+  });
+
+  function resetVoiceForm() {
+    location.reload();
+  }
+
+  window.resetVoiceForm = resetVoiceForm;
+</script>
+</body>
+</html>

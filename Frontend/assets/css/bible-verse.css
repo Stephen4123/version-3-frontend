@@ -1,0 +1,59 @@
+.bible-verse-card {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  padding: 1.5rem 2rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.verse-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  font-weight: 300;
+  quotes: "“" "”" "‘" "’";
+}
+
+.verse-text::before {
+  content: open-quote;
+  speak: never;
+}
+
+.verse-text::after {
+  content: close-quote;
+  speak: never;
+}
+
+.verse-reference {
+  color: #0ea5e9;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .verse-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bible-verse-card {
+    margin: 1rem auto;
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .verse-text {
+    font-size: 1rem;
+  }
+}
+

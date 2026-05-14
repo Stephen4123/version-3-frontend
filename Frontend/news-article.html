@@ -1,0 +1,1120 @@
+﻿<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <meta name="yandex" content="notranslate">
+  <link rel="icon" href="https://drive.google.com/thumbnail?id=1Lavb4TCE2QFKQ7ig1XlrX30KoLCjJYPp&sz=w1000&v=20260430">
+  <title>News Article — Jeevajyothi Media</title>
+  <meta name="description" content="Full news article from Jeevajyothi Media.">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="">
+  <link rel="stylesheet" href="assets/css/styles.css?v=202605071811">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866754402147741" crossorigin="anonymous"></script>
+  <script>
+    // Set Open Graph meta tags synchronously for crawlers
+    // NOTE: API_BASE must be defined before it is used in this pre-render script.
+    const API_BASE = 'http://localhost:3000/api/public';
+    var CACHE_BUST = Date.now();
+    function appendCacheBust(url) {
+      if (!url || typeof url !== 'string' || url.includes('?')) return url;
+      if (/^(?:\.\/|\/)?assets\//.test(url)) return url + '?v=' + CACHE_BUST;
+      return url;
+    }
+    (function() {
+      try {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', `${API_BASE}/posts`, false);
+        xhr.send();
+        if (xhr.status === 200) {
+          var posts = JSON.parse(xhr.responseText);
+          var params = new URLSearchParams(window.location.search);
+          var slug = params.get('slug');
+          if (slug) {
+            var article = posts.find(function(p) { return p.slug === slug; });
+            if (article) {
+              var title = article.title;
+              var description = article.excerptHtml || article.title;
+              var coverSrc = appendCacheBust(article.cover || (article.coverImages && article.coverImages.length > 0 ? article.coverImages[0] : null));
+              var iconEl = document.querySelector('link[rel="icon"]');
+              if (iconEl && coverSrc) {
+                iconEl.setAttribute('href', coverSrc);
+              }
+              var url = window.location.href.replace(/\.html(?=[?#]|$)/gi, '');
+              document.querySelector('meta[property="og:title"]').setAttribute('content', title || 'Jeevajyothi Media');
+              document.querySelector('meta[property="og:description"]').setAttribute('content', description || 'Full news article from Jeevajyothi Media.');
+              document.querySelector('meta[property="og:image"]').setAttribute('content', coverSrc || '');
+              document.querySelector('meta[property="og:url"]').setAttribute('content', url);
+              document.querySelector('meta[property="og:type"]').setAttribute('content', 'article');
+              document.title = title + ' — Jeevajyothi Media';
+              document.querySelector('meta[name="description"]').setAttribute('content', description);
+            }
+          }
+        }
+      } catch (e) {
+        console.error('Error setting meta tags:', e);
+      }
+    })();
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+.article-gallery h3 {
+  margin-bottom: 20px;
+  color: var(--text);
+  font-size: 1.4em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.article-gallery {
+  margin-top: 40px;
+  padding: 0;
+  border-top: none;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.5s ease;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  aspect-ratio: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+}
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.25);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.92) 0%, rgba(10, 10, 20, 0.95) 100%);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInBackdrop 0.3s ease;
+}
+.gallery-modal.active {
+  display: flex;
+}
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(12px);
+  }
+}
+.gallery-modal-content {
+  position: relative;
+  max-width: 100vw;
+  max-height: 100vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: slideInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.gallery-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: rgba(20, 20, 20, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gallery-modal-header h3 {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+.gallery-close {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.gallery-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: rotate(90deg);
+}
+.gallery-modal-media {
+  width: 100%;
+  height:100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+  padding: 10px;
+  margin: 10px 0;
+  min-height: 0;
+}
+.gallery-modal-media img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  animation: imageSlideIn 0.4s ease;
+}
+@keyframes imageSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.gallery-modal-media iframe,
+.gallery-modal-media video {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+}
+.gallery-modal-footer {
+  padding: 24px 30px;
+  background: rgba(20, 20, 20, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.gallery-counter {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+.gallery-nav {
+  display: flex;
+  gap: 12px;
+}
+.gallery-nav-btn {
+  padding: 10px 16px;
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.gallery-nav-btn:hover {
+  background: var(--accent-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+.gallery-nav-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive styles for gallery modal */
+@media (max-width: 768px) {
+  .gallery-modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+  .gallery-modal-header {
+    padding: 16px 20px;
+  }
+  .gallery-modal-media {
+    padding: 8px;
+  }
+  .gallery-modal-footer {
+    padding: 16px 20px;
+  }
+  .gallery-nav-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  .gallery-counter {
+    font-size: 14px;
+  }
+  .gallery-close {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-modal-content {
+    max-height: 82vh;
+  }
+  .gallery-modal-header {
+    padding: 12px 16px;
+  }
+  .gallery-modal-media {
+    padding: 5px;
+  }
+  .gallery-modal-footer {
+    padding: 12px 16px;
+  }
+  .gallery-nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .gallery-nav-btn {
+    width: 100%;
+    padding: 10px;
+  }
+  .gallery-close {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866754402147741" crossorigin="anonymous"></script>
+</head>
+<body>
+   <!-- Left Sidebar Ad 2 -->
+   <div class="sidebar-ad left-ad ad-editable" style="top: 78.75%;">
+     <a id="leftAdLink2" href="tel:+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+       <img id="leftAdImage2" src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+       <p id="leftAdText2" style="display:none;">Ad Space</p>
+     </a>
+   </div>
+
+   <!-- Right Sidebar Ad 2 -->
+   <div class="sidebar-ad right-ad ad-editable" style="top: 78.75%;">
+     <a id="rightAdLink2" href="https://wa.me/+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+       <img id="rightAdImage2" src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+       <p id="rightAdText2" style="display:none;">Ad Space</p>
+     </a>
+   </div>
+
+   <!-- Left Sidebar Ad -->
+   <div class="sidebar-ad left-ad ad-editable" style="top: 257px;">
+     <a id="leftAdLink" href="tel:+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+       <img id="leftAdImage" src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+       <p id="leftAdText" style="display:none;">Ad Space</p>
+     </a>
+   </div>
+
+   <!-- Right Sidebar Ad -->
+   <div class="sidebar-ad right-ad ad-editable" style="top: 257px;">
+     <a id="rightAdLink" href="https://wa.me/+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+       <img id="rightAdImage" src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+       <p id="rightAdText" style="display:none;">Ad Space</p>
+     </a>
+   </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="assets/images/placeholder.svg?v=202605071811" alt="Jeevajyothi Media Logo" class="brand-logo">
+        <span id="headerBrandName">Jeevajyothi Media</span>
+      </a>
+      <nav class="nav">
+        <!-- Navigation will be loaded dynamically -->
+      </nav>
+    </div>
+  </header>
+  <div class="announcement-bar"><div class="announcement-track"></div></div>
+
+   <!-- Main Content -->
+   <main>
+     <div class="container">
+       <article class="article-page">
+<h1 id="articleTitle">Loading...</h1>
+<div style="text-align: center;">
+  <a href="voice-hub-submit.html" class="btn btn-primary" style="font-weight:600; padding: 0.6rem 1.5rem; font-size: 0.9rem; display: inline-block;">Share Your Voice</a>
+</div>
+         <div class="whatsapp-community" style="margin: 1.5rem 0; text-align: center;">
+           <a href="https://www.whatsapp.com/channel/0029Va9LliuJZg4A3wN3aN2g" class="btn primary" target="_blank" style="background: #25D366; border-color: #25D366; font-weight: 600; padding: 0.6rem 1.5rem; font-size: 0.9rem;"><style>@media (max-width: 768px) { .whatsapp-community .btn { padding: 0.5rem 1.2rem !important; font-size: 0.85rem !important; } }</style>📢 Join Our WhatsApp Channel for Latest Updates!</a>
+         </div>
+         <div class="article-meta">
+           <div id="articleMeta">Loading...</div>
+         </div>
+         <div class="article-cover" id="articleCover"></div>
+         <div class="article-content" id="articleContent">
+           <p>Loading article content...</p>
+         </div>
+         <!-- Gallery Section -->
+         <div class="article-gallery" id="articleGallerySection" style="display:none;">
+           <h3>📸 Gallery</h3>
+           <div class="gallery-grid" id="galleryGrid">
+             <!-- Gallery items will be loaded here -->
+           </div>
+         </div>
+         <div class="article-actions">
+           <a href="updates.html" class="btn secondary">Back to Updates</a>
+           <button id="shareBtn" class="btn primary" type="button">Share</button>
+         </div>
+       </article>
+     </div>
+   </main>
+
+
+
+  <!-- Mobile Ads -->
+  <div class="mobile-ads">
+    <div class="container">
+      <div class="grid two">
+        <a href="tel:+918078864233" class="ad-banner horizontal">
+          <img src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+        </a>
+        <a href="https://wa.me/+918078864233" class="ad-banner horizontal">
+          <img src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span id="footerBrandName">Jeevajyothi Media</span> • <span id="footerText">Believe • Sing • Share</span></p>
+      <div class="social">
+        <a id="footerFacebook" href="https://www.facebook.com/jeevajyothigospelvoice" target="_blank" rel="noopener">
+          <img src="assets/images/facebook.png?v=202605071811" alt="Facebook">
+        </a>
+        <a id="footerInstagram" href="https://www.instagram.com/jeevajyothi_media" target="_blank" rel="noopener">
+          <img src="assets/images/instagram.png?v=202605071811" alt="Instagram">
+        </a>
+        <a id="footerYouTube" href="https://www.youtube.com/@jeevajyothimedia" target="_blank" rel="noopener">
+          <img src="assets/images/youtube.png?v=202605071811" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/content-protection.js" defer></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/load-navigators.js"></script>
+  <script src="assets/js/load-core-team.js"></script>
+<script>
+    // API_BASE is declared in the pre-render script at the top of the file.
+
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Update brand name and social links
+    (function() {
+      const LS_KEY = 'site.data.v1';
+      function readSiteData() {
+        try { const raw = localStorage.getItem(LS_KEY); return raw ? JSON.parse(raw) : null; } catch (_) { return null; }
+      }
+      const site = readSiteData();
+      if (site && site.other) {
+        const headerBrandName = document.getElementById('headerBrandName');
+        const footerBrandName = document.getElementById('footerBrandName');
+        const footerText = document.getElementById('footerText');
+        if (headerBrandName && site.other.brandName) headerBrandName.textContent = site.other.brandName;
+        if (footerBrandName && site.other.brandName) footerBrandName.textContent = site.other.brandName;
+        if (footerText && site.other.footerText) footerText.textContent = site.other.footerText;
+        const footerFacebook = document.getElementById('footerFacebook');
+        const footerInstagram = document.getElementById('footerInstagram');
+        const footerYouTube = document.getElementById('footerYouTube');
+        if (footerFacebook && site.other.facebookLink) footerFacebook.href = site.other.facebookLink;
+        if (footerInstagram && site.other.instagramLink) footerInstagram.href = site.other.instagramLink;
+        if (footerYouTube && site.other.youtubeLink) footerYouTube.href = site.other.youtubeLink;
+      }
+    })();
+    
+    function normalizeText(value) {
+      return String(value || '')
+        .replace(/[^\w\s.-]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase();
+    }
+
+    function isBoardMemberName(authorName, team) {
+      if (!authorName || !Array.isArray(team)) return false;
+      const normalizedAuthor = normalizeText(authorName);
+      return team.some(member => {
+        const normalizedMemberName = normalizeText(member.name || member.fullName || '');
+        return normalizedMemberName === normalizedAuthor ||
+               normalizedMemberName.includes(normalizedAuthor) ||
+               normalizedAuthor.includes(normalizedMemberName);
+      });
+    }
+
+    function findTeamMemberByName(authorName, team) {
+      if (!authorName || !Array.isArray(team)) return null;
+      const normalizedAuthor = normalizeText(authorName);
+      return team.find(member => {
+        const normalizedMemberName = normalizeText(member.name || member.fullName || '');
+        return normalizedMemberName === normalizedAuthor ||
+               normalizedMemberName.includes(normalizedAuthor) ||
+               normalizedAuthor.includes(normalizedMemberName);
+      }) || null;
+    }
+
+    async function loadArticle() {
+      try {
+        // Get slug from URL query parameter
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('slug');
+        
+        if (!slug) {
+          document.getElementById('articleContent').innerHTML = '<p style="text-align:center;color:var(--muted);">No article found. Please select an article from the news page.</p>';
+          return;
+        }
+        
+        // Load posts from backend or local
+        let posts = [];
+        let teamMembers = [];
+          const [siteResponse, teamResponse] = await Promise.all([
+          fetch(`${API_BASE}/site?t=` + Date.now()).catch(() => null),
+          fetch(`${API_BASE}/core-team`).catch(() => null)
+        ]);
+
+        if (siteResponse && siteResponse.ok) {
+          const site = await siteResponse.json();
+          posts = site.posts || [];
+        }
+
+        if (teamResponse && teamResponse.ok) {
+          const teamData = await teamResponse.json();
+          teamMembers = Array.isArray(teamData) ? teamData : [];
+        }
+
+        if (!posts.length) {
+          const response = await fetch(`${API_BASE}/posts`);
+          posts = await response.json();
+        }
+        
+        // Find the article with matching slug
+        const article = posts.find(p => p.slug === slug);
+        
+        if (!article) {
+          document.getElementById('articleContent').innerHTML = '<p style="text-align:center;color:var(--muted);">Article not found.</p>';
+          return;
+        }
+        
+        // Determine cover image source (same logic as display)
+        const coverSrc = appendCacheBust(article.cover || (article.coverImages && article.coverImages.length > 0 ? article.coverImages[0] : null));
+
+        // Populate content
+        document.getElementById('articleTitle').textContent = article.title;
+
+        const authorName = article.author || '';
+        const matchedTeamMember = findTeamMemberByName(authorName, teamMembers);
+        const authorImage = appendCacheBust(article.authorImage || article.image || matchedTeamMember?.image || '');
+        const authorIsBoardMember = authorName && isBoardMemberName(authorName, teamMembers);
+        const isAuthorDetailType = ['article', 'poem'].includes((article.type || '').toLowerCase());
+        const authorPanelStart = (authorName && isAuthorDetailType)
+          ? authorIsBoardMember
+            ? `<a class="speech-author-panel speech-author-panel-link" href="board-member.html?name=${encodeURIComponent(authorName)}&v=202604301751" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding:1rem 1.1rem;border:1px solid var(--border-color);border-radius:14px;background:rgba(255,255,255,0.03);text-decoration:none;color:inherit;">`
+            : `<div class="speech-author-panel">`
+          : '';
+        const authorPanelEnd = (authorName && isAuthorDetailType) ? (authorIsBoardMember ? '</a>' : '</div>') : '';
+        const authorMarkup = (authorName && isAuthorDetailType) ? `<span class="speech-author-name">${authorName}</span>` : '';
+        const authorMetaLine = (!isAuthorDetailType && authorName) ? `<div class="article-author">✍️ ${authorName}</div>` : '';
+
+        // Update meta section
+        const metaContainer = document.querySelector('.article-meta');
+        metaContainer.innerHTML = `
+          ${authorName && isAuthorDetailType ? `${authorPanelStart}${authorImage ? `<img src="${authorImage}" alt="${authorName}" style="width:88px;height:112px;object-fit:cover;border-radius:10px;border:2px solid rgba(255,255,255,0.2);">` : ''}
+            <div>
+              <span class="speech-author-label">Author</span>
+              ${authorMarkup}
+            </div>
+          ${authorPanelEnd}` : authorMetaLine}
+          <div class="article-meta-content">
+            <div class="article-details">
+              <span class="article-date">📅 ${article.displayDate || article.date}</span>
+              <span class="article-type">📰 ${article.type ? article.type.charAt(0).toUpperCase() + article.type.slice(1) : 'News'}</span>
+            </div>
+          </div>
+        `;
+
+        // Add excerpt if available
+        let contentHtml = '';
+        if (article.excerptHtml) {
+          contentHtml += '<div class="article-excerpt" style="margin-bottom:20px;padding:16px 16px 16px 32px;background:linear-gradient(90deg, rgba(99,102,241,0.1) 0%, var(--bg-secondary) 100%);border-left:6px solid var(--accent-primary);font-weight:bold;color:var(--text);position:relative;border-radius:0 8px 8px 0;box-shadow:2px 0 8px rgba(99,102,241,0.2);">' + article.excerptHtml + '</div>';
+        }
+        // Add content
+        let articleContent = article.contentHtml || '';
+        if (articleContent) {
+          // Make first word bigger and bold
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = articleContent;
+          const firstTextNode = tempDiv.querySelector('*') || tempDiv.firstChild;
+          if (firstTextNode && firstTextNode.nodeType === Node.TEXT_NODE) {
+            const text = firstTextNode.textContent.trim();
+            const words = text.split(' ');
+            if (words.length > 0) {
+              words[0] = '<span style="font-size:1.5em;font-weight:bold;">' + words[0] + '</span>';
+              firstTextNode.textContent = words.join(' ');
+            }
+          }
+          articleContent = tempDiv.innerHTML;
+        }
+        contentHtml += articleContent;
+        // Highlight brand name in content
+        contentHtml = contentHtml.replace(/Jeevajyothi Media/g, '<span class="brand-highlight">$&</span>');
+        document.getElementById('articleContent').innerHTML = contentHtml || '<p>No content available.</p>';
+
+
+
+        // Add cover image
+        const coverContainer = document.getElementById('articleCover');
+        if (article.cover || (article.coverImages && article.coverImages.length > 0)) {
+          const coverSrc = (article.coverImages && article.coverImages.length > 0) ? article.coverImages[0] : article.cover;
+
+          // Helper functions for media
+          function extractYouTubeId(url) {
+            if (!url) return null;
+            const m = url.match(/(?:youtube\.com\/(?:watch\?.*v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/i);
+            return m ? m[1] : null;
+          }
+
+          function isFacebookLink(url) {
+            return !!(url && (/facebook\.com\/.*\/videos\/|fb\.watch\/|facebook\.com\/reel\//i).test(url));
+          }
+
+          function isInstagramLink(url) {
+            return !!(url && (/instagram\.com\/(p|reel|tv)\/|instagr\.am\//i).test(url));
+          }
+
+          function isVideoFile(url) {
+            return !!(url && /\.(mp4|webm|ogg)(\?|$)/i.test(url));
+          }
+
+          let mediaElement = '';
+
+          // Drive preview (video)
+          const isDrivePreview = coverSrc && coverSrc.includes('drive.google.com') && coverSrc.includes('/preview');
+          if (isDrivePreview) {
+            function convertDrivePreviewToDownload(url) {
+              if (!url || !url.includes('drive.google.com') || !url.includes('/preview')) return url;
+              const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+              if (match) {
+                return `https://drive.google.com/uc?export=download&id=${match[1]}`;
+              }
+              return url;
+            }
+            mediaElement = `<video class="player" playsinline controls style="width:100%;max-width:800px;height:auto;border-radius:8px;margin:0 auto;display:block;"><source src="${convertDrivePreviewToDownload(coverSrc)}" type="video/mp4"></video>`;
+          } else if (extractYouTubeId(coverSrc)) {
+            const vid = extractYouTubeId(coverSrc);
+            mediaElement = `<div data-plyr-provider="youtube" data-plyr-embed-id="${vid}" style="width:100%;max-width:800px;height:400px;border-radius:8px;margin:0 auto;display:block;"></div>`;
+          } else if (isFacebookLink(coverSrc)) {
+            mediaElement = `<iframe src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(coverSrc)}&show_text=0&width=560" width="100%" height="400" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen" style="max-width:800px;border-radius:8px;margin:0 auto;display:block;"></iframe>`;
+          } else if (isInstagramLink(coverSrc)) {
+            const embedUrl = coverSrc.replace(/\/?$/, '') + (coverSrc.includes('/embed') ? '' : '/embed');
+            mediaElement = `<iframe src="${embedUrl}" width="100%" height="400" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" style="max-width:800px;border-radius:8px;margin:0 auto;display:block;"></iframe>`;
+          } else if (isVideoFile(coverSrc)) {
+            mediaElement = `<video class="player" playsinline controls style="width:100%;max-width:800px;height:auto;border-radius:8px;margin:0 auto;display:block;"><source src="${coverSrc}"></video>`;
+          } else {
+            // Default image
+            mediaElement = `<img src="${coverSrc}" alt="${article.title}" style="width:100%;max-width:800px;height:auto;border-radius:8px;margin:0 auto;display:block;">`;
+          }
+
+          coverContainer.innerHTML = mediaElement;
+
+          // Initialize Plyr
+          const video = coverContainer.querySelector('video');
+          if (video) {
+            try { new Plyr(video); } catch (e) { }
+          }
+          const plyrProvider = coverContainer.querySelector('[data-plyr-provider]');
+          if (plyrProvider) {
+            try {
+              if (typeof Plyr !== 'undefined') {
+                new Plyr(plyrProvider);
+              }
+            } catch (e) { }
+          }
+        } else {
+          coverContainer.innerHTML = '';
+        }
+
+        // Store article reference for gallery and initialize it
+        currentArticle = article;
+        initializeGallery(article);
+        
+        // Share button
+        const shareBtn = document.getElementById('shareBtn');
+        shareBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const url = window.location.href;
+          const brandName = document.getElementById('headerBrandName') ? document.getElementById('headerBrandName').textContent : 'JEEVAJYOTHI MEDIA';
+          const title = article.title;
+          const typeDisplay = article.type ? article.type.charAt(0).toUpperCase() + article.type.slice(1) : 'News';
+          const authorLine = (article.type === 'article' || article.type === 'poem') ? `\n*📝${article.author || 'Unknown'}*` : '';
+          const fullText = `*🛡️${article.title}*\n*📌${brandName} - ${typeDisplay}*${authorLine}\n🔗 ${url}`;
+
+          if (navigator.share) {
+            navigator.share({ title, text: fullText }).catch(() => {});
+          } else if (navigator.clipboard) {
+            navigator.clipboard.writeText(fullText).then(() => {
+              try {
+                window.toastr && window.toastr.info && window.toastr.info('Link copied to clipboard');
+              } catch (e) {}
+            }).catch(() => {
+              const input = document.createElement('input');
+              input.value = fullText;
+              document.body.appendChild(input);
+              input.select();
+              document.execCommand('copy');
+              document.body.removeChild(input);
+            });
+          }
+        });
+        
+      } catch (error) {
+        console.error('Error loading article:', error);
+        document.getElementById('articleContent').innerHTML = '<p style="text-align:center;color:var(--muted);">Error loading article. Please try again.</p>';
+      }
+    }
+    
+    // Load article when page loads
+    window.LoaderUtils?.requestLoaderHold();
+    loadArticle().finally(() => window.LoaderUtils?.releaseLoaderHold());
+
+    // Use history navigation when returning to updates to preserve scroll position
+    const backToUpdatesLink = document.querySelector('.article-actions a[href="updates.html"]');
+    if (backToUpdatesLink) {
+      backToUpdatesLink.addEventListener('click', function (event) {
+        if (document.referrer && document.referrer.includes('updates.html')) {
+          event.preventDefault();
+          window.history.back();
+        }
+      });
+    }
+    
+    // Gallery functionality
+    let currentGalleryIndex = 0;
+    let galleryItems = [];
+
+    // Helper function to detect media type
+    function getMediaType(item) {
+      // Extract URL from item (support both string and object formats)
+      const url = typeof item === 'string' ? item : (item && item.url ? item.url : '');
+      if (!url) return 'image';
+      const lower = url.toLowerCase();
+      if (/\.(mp4|webm|ogg|mov|avi)(\?|$)/i.test(lower) || /drive\.google\.com.*\/file\/d\//.test(lower)) return 'video';
+      if (/youtube\.com|youtu\.be/.test(lower)) return 'youtube';
+      if (/facebook\.com.*\/video|fb\.watch|facebook\.com\/reel/.test(lower)) return 'facebook';
+      if (/instagram\.com\/(p|reel|tv)|instagr\.am/.test(lower)) return 'instagram';
+      return 'image';
+    }
+
+    // Helper function to extract YouTube ID
+    function extractYouTubeId(url) {
+      if (!url) return null;
+      const m = url.match(/(?:youtube\.com\/(?:watch\?.*v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/i);
+      return m ? m[1] : null;
+    }
+
+    function initializeGallery(article) {
+      if (!article || !article.galleryImages || article.galleryImages.length === 0) {
+        const gallerySection = document.getElementById('articleGallerySection');
+        if (gallerySection) gallerySection.style.display = 'none';
+        return;
+      }
+
+      const galleryGrid = document.getElementById('galleryGrid');
+      const gallerySection = document.getElementById('articleGallerySection');
+      
+      if (!galleryGrid || !gallerySection) {
+        console.warn('Gallery elements not found');
+        return;
+      }
+
+      galleryItems = article.galleryImages;
+
+
+      // Create gallery modal if it doesn't exist
+      if (!document.getElementById('gallery-modal')) {
+        const modal = document.createElement('div');
+        modal.id = 'gallery-modal';
+        modal.className = 'gallery-modal';
+        modal.innerHTML = `
+            <div class="gallery-modal-content">
+              <div class="gallery-modal-header">
+                <h3 id="gallery-modal-title" style="margin: 0; font-size: 18px; color: white;"></h3>
+                <button class="gallery-close" aria-label="Close gallery">&times;</button>
+              </div>
+              <div class="gallery-modal-media" id="gallery-modal-media">
+                <img id="gallery-modal-image" src="" alt="Gallery Item" style="display:none;">
+                <video id="gallery-modal-video" playsinline controls style="display:none; width:100%; height:100%; object-fit:contain;"></video>
+                <iframe id="gallery-modal-iframe" style="display:none; width:100%; height:100%;"></iframe>
+                <div id="gallery-modal-youtube" style="display:none; width:100%; height:100%;"></div>
+              </div>
+              <div class="gallery-modal-footer">
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                  <span class="gallery-counter"><span id="gallery-current">1</span> / <span id="gallery-total">${galleryItems.length}</span></span>
+                  <div class="gallery-nav" style="display: flex; gap: 12px;">
+                    <button class="gallery-nav-btn" id="gallery-prev-btn" aria-label="Previous item">← Previous</button>
+                    <button class="gallery-nav-btn" id="gallery-next-btn" aria-label="Next item">Next →</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+      }
+
+      const modal = document.getElementById('gallery-modal');
+      if (!modal) {
+        console.warn('Gallery modal could not be created');
+        return;
+      }
+      
+      const closeBtn = modal.querySelector('.gallery-close');
+      const prevBtn = modal.querySelector('#gallery-prev-btn');
+      const nextBtn = modal.querySelector('#gallery-next-btn');
+
+      if (!closeBtn || !prevBtn || !nextBtn) {
+        console.warn('Gallery buttons not found');
+        return;
+      }
+      // Populate grid with thumbnails
+      galleryGrid.innerHTML = '';
+      galleryItems.forEach((galleryItem, index) => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        const mediaType = getMediaType(galleryItem);
+        // Extract URL from item (support both string and object formats)
+        const url = typeof galleryItem === 'string' ? galleryItem : (galleryItem && galleryItem.url ? galleryItem.url : '');
+        
+        // Create appropriate thumbnail
+        if (mediaType === 'video') {
+          let videoSrc = url;
+          if (url.includes('drive.google.com') && url.includes('/preview')) {
+            const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)\/preview/);
+            if (match) {
+              videoSrc = `https://drive.google.com/uc?export=download&id=${match[1]}`;
+            }
+          }
+          item.innerHTML = `
+            <div style="position:relative;width:100%;height:100%;background:#000;">
+              <video style="width:100%;height:100%;object-fit:cover;" preload="metadata"><source src="${videoSrc}"></video>
+              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:rgba(255,255,255,0.8);border-radius:50%;display:flex;align-items:center;justify-content:center;"><span style="font-size:24px;">▶</span></div>
+            </div>
+          `;
+        } else if (mediaType === 'youtube') {
+          const youtubeId = extractYouTubeId(url);
+          item.innerHTML = `<img src="https://img.youtube.com/vi/${youtubeId}/0.jpg" alt="YouTube Video" style="width:100%;height:100%;object-fit:cover;">`;
+        } else if (mediaType === 'facebook' || mediaType === 'instagram') {
+          item.innerHTML = `
+            <div style="position:relative;width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center;">
+              <div style="font-size:12px;color:white;text-align:center;">📹 Video</div>
+            </div>
+          `;
+        } else {
+          item.innerHTML = `<img src="${url}" alt="Gallery item ${index + 1}" style="width:100%;height:100%;object-fit:cover;">`;
+        }
+        
+        item.addEventListener('click', () => openGalleryModal(index));
+        galleryGrid.appendChild(item);
+      });
+
+      gallerySection.style.display = 'block';
+
+      // Modal controls (attach only once)
+      if (!modal.dataset.listenersAttached) {
+        closeBtn.addEventListener('click', closeGalleryModal);
+        prevBtn.addEventListener('click', previousImage);
+        nextBtn.addEventListener('click', nextImage);
+
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeGalleryModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (modal.classList.contains('active')) {
+            if (e.key === 'Escape') closeGalleryModal();
+            if (e.key === 'ArrowLeft') previousImage();
+            if (e.key === 'ArrowRight') nextImage();
+          }
+        });
+        
+        modal.dataset.listenersAttached = true;
+      }
+    }
+
+    function openGalleryModal(index) {
+      currentGalleryIndex = index;
+      const modal = document.getElementById('gallery-modal');
+      const mediaContainer = modal.querySelector('#gallery-modal-media');
+      const img = modal.querySelector('#gallery-modal-image');
+      const video = modal.querySelector('#gallery-modal-video');
+      const iframe = modal.querySelector('#gallery-modal-iframe');
+      const youtubeDiv = modal.querySelector('#gallery-modal-youtube');
+      const titleElement = modal.querySelector('#gallery-modal-title');
+      
+      // Extract URL and title from gallery item (support both string and object formats)
+      let url, title;
+      const item = galleryItems[index];
+      if (typeof item === 'string') {
+        url = item;
+        title = `Item ${index + 1}`;
+      } else if (typeof item === 'object' && item.url) {
+        url = item.url;
+        title = item.title || `Item ${index + 1}`;
+      } else {
+        return;
+      }
+      
+      // Update title in header
+      if (titleElement) {
+        titleElement.textContent = title;
+      }
+
+      // Stop and reset all previous media
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+        if (video.plyr) {
+          try {
+            video.plyr.destroy();
+          } catch (e) {}
+        }
+      }
+      
+      // Clear embedded media
+      if (iframe) {
+        iframe.src = '';
+      }
+      
+      if (youtubeDiv) {
+        youtubeDiv.innerHTML = '';
+      }
+
+      // Hide all media types first
+      img.style.display = 'none';
+      video.style.display = 'none';
+      iframe.style.display = 'none';
+      youtubeDiv.style.display = 'none';
+
+      const mediaType = getMediaType(url);
+
+      if (mediaType === 'image') {
+        img.src = url;
+        img.alt = `Gallery item ${index + 1}`;
+        img.style.display = 'block';
+      } else if (mediaType === 'video') {
+        // Check if it's a Google Drive video
+        if (url.includes('drive.google.com') && url.includes('/preview')) {
+          // Use iframe for Google Drive videos
+          iframe.src = url;
+          iframe.style.display = 'block';
+        } else {
+          // Clear previous video source
+          video.innerHTML = '';
+          video.src = '';
+
+          // Add video source
+          const source = document.createElement('source');
+          source.src = url;
+
+          // Detect video type
+          if (url.includes('.mp4')) source.type = 'video/mp4';
+          else if (url.includes('.webm')) source.type = 'video/webm';
+          else if (url.includes('.ogg')) source.type = 'video/ogg';
+          else if (url.includes('.mov')) source.type = 'video/mp4';
+          else if (url.includes('.avi')) source.type = 'video/avi';
+          else source.type = 'video/mp4';
+
+          video.appendChild(source);
+          video.style.display = 'block';
+
+          // Initialize Plyr if available
+          if (typeof Plyr !== 'undefined') {
+            try {
+              // Destroy existing player if any
+              if (video.plyr) {
+                video.plyr.destroy();
+              }
+              // Create new player with custom options
+              new Plyr(video, {
+                controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'],
+                speed: { selected: 1, options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2] },
+                quality: { default: 720, options: [360, 480, 720, 1080] }
+              });
+            } catch (e) {
+              console.log('Plyr initialization skipped, using native controls');
+            }
+          }
+        }
+      } else if (mediaType === 'youtube') {
+        const youtubeId = extractYouTubeId(url);
+        if (youtubeId) {
+          youtubeDiv.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${youtubeId}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" style="border-radius:8px;"></iframe>`;
+          youtubeDiv.style.display = 'block';
+        }
+      } else if (mediaType === 'facebook') {
+        iframe.src = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=0&width=560`;
+        iframe.style.display = 'block';
+      } else if (mediaType === 'instagram') {
+        const embedUrl = url.replace(/\/?$/, '') + (url.includes('/embed') ? '' : '/embed');
+        iframe.src = embedUrl;
+        iframe.style.display = 'block';
+      }
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      updateGalleryNav();
+    }
+
+    function closeGalleryModal() {
+      const modal = document.getElementById('gallery-modal');
+      const video = modal.querySelector('#gallery-modal-video');
+      const iframe = modal.querySelector('#gallery-modal-iframe');
+      const youtubeDiv = modal.querySelector('#gallery-modal-youtube');
+      
+      // Stop and reset video
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+        if (video.plyr) {
+          try {
+            video.plyr.destroy();
+          } catch (e) {}
+        }
+      }
+      
+      // Reset iframes
+      if (iframe) {
+        iframe.src = '';
+      }
+      
+      // Reset youtube div
+      if (youtubeDiv) {
+        youtubeDiv.innerHTML = '';
+      }
+      
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function nextImage() {
+      if (currentGalleryIndex < galleryItems.length - 1) {
+        openGalleryModal(currentGalleryIndex + 1);
+      }
+    }
+
+    function previousImage() {
+      if (currentGalleryIndex > 0) {
+        openGalleryModal(currentGalleryIndex - 1);
+      }
+    }
+
+    function updateGalleryNav() {
+      const modal = document.getElementById('gallery-modal');
+      const prevBtn = modal.querySelector('#gallery-prev-btn');
+      const nextBtn = modal.querySelector('#gallery-next-btn');
+      const counter = modal.querySelector('#gallery-current');
+
+      counter.textContent = currentGalleryIndex + 1;
+      prevBtn.disabled = currentGalleryIndex === 0;
+      nextBtn.disabled = currentGalleryIndex === galleryItems.length - 1;
+    }
+
+    // Load WhatsApp community link
+    fetch(`${API_BASE}/whatsapp`)
+      .then(response => response.json())
+
+      .then(data => {
+        const link = document.getElementById('whatsappCommunityLink');
+        if (link && data.communityLink) {
+          link.href = data.communityLink;
+        }
+        const img = link.querySelector('img');
+        if (img && data.image) {
+          img.src = data.image;
+        }
+      })
+      .catch(error => console.error('Failed to load WhatsApp link:', error));
+  </script>
+</body>
+</html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <meta name="yandex" content="notranslate">
+  <link rel="icon" href="https://drive.google.com/thumbnail?id=1jaEnOnm2O0w6882JCtHgYNJQ0HcXwzB7&sz=w500">
+  <title>Board Member Contributions - Jeevajyothi Media</title>
+  <meta name="description" content="Contributions by board members from news, poems, articles, speeches, and voices.">
+  <link rel="stylesheet" href="assets/css/styles.css?v=202605071811">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Michroma&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866754402147741" crossorigin="anonymous"></script>
+ <style>
+    /* --- Layout Enhancements --- */
+    .contribution-page {
+      padding-bottom: 3rem;
+    }
+
+    .team-page-hero {
+      padding: 3rem 0;
+      background: linear-gradient(to bottom, rgba(255, 207, 110, 0.08) 0%, transparent 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Modern Profile Header: Image next to Name */
+    .member-profile-header {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .member-avatar-container {
+      flex-shrink: 0;
+    }
+
+    .member-avatar {
+      width: 160px;
+      height: 200px;
+      border-radius: 24px;
+      object-fit: cover;
+      border: 4px solid rgba(255, 207, 110, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.04);
+      display: block;
+    }
+
+    .member-info-content {
+      flex: 1;
+      min-width: 0;
+      text-align: left;
+      overflow: visible;
+    }
+
+    /* ============================================ */
+    /* RESPONSIVE NAME STYLES - PREVENTS OVERFLOW */
+    /* ============================================ */
+    #memberNameHeading {
+      margin: 0 0 10rem 0;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.52;
+      /* Critical for long name wrapping */
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      white-space: normal;
+      max-width: 100%;
+      display: block;
+      overflow-x: hidden;
+    }
+
+    /* Large Desktop (1400px and above) */
+    @media (min-width: 1400px) {
+      #memberNameHeading {
+        font-size: 3rem;
+      }
+      .member-avatar {
+        width: 180px;
+        height: 225px;
+      }
+    }
+
+    /* Desktop (1200px - 1399px) */
+    @media (min-width: 1200px) and (max-width: 1399px) {
+      #memberNameHeading {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Small Desktop / Large Tablet (992px - 1199px) */
+    @media (min-width: 992px) and (max-width: 1199px) {
+      #memberNameHeading {
+        font-size: 1.5rem;
+      }
+      .member-avatar {
+        width: 150px;
+        height: 188px;
+      }
+    }
+
+    /* Tablet (768px - 991px) */
+    @media (max-width: 991px) {
+      .member-profile-header {
+        gap: 1.75rem;
+      }
+      .member-avatar {
+        width: 130px;
+        height: 163px;
+      }
+      #memberNameHeading {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Mobile Landscape (576px - 767px) */
+    @media (max-width: 767px) {
+      .member-profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+      }
+      .member-info-content {
+        text-align: center;
+        width: 100%;
+      }
+      .member-avatar {
+        width: 120px;
+        height: 150px;
+        margin: 0 auto;
+      }
+      #memberNameHeading {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
+
+    /* Mobile Portrait (481px - 575px) */
+    @media (max-width: 575px) {
+      .member-avatar {
+        width: 110px;
+        height: 138px;
+      }
+      #memberNameHeading {
+        font-size: 1.3rem;
+        line-height: 1.3;
+      }
+    }
+
+    /* Small Mobile (380px - 480px) */
+    @media (max-width: 480px) {
+      .team-page-hero {
+        padding: 1.5rem 0;
+      }
+      .member-avatar {
+        width: 100px;
+        height: 125px;
+      }
+      #memberNameHeading {
+        font-size: 1.1rem;
+        line-height: 1.35;
+      }
+      .contribution-summary p {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Extra Small Mobile (320px - 379px) */
+    @media (max-width: 379px) {
+      .member-avatar {
+        width: 90px;
+        height: 113px;
+      }
+      #memberNameHeading {
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+    }
+
+    /* Very Small Mobile (up to 319px) */
+    @media (max-width: 319px) {
+      .member-avatar {
+        width: 80px;
+        height: 100px;
+      }
+      #memberNameHeading {
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+    }
+
+    /* For names with 30+ characters - reduced font size */
+    #memberNameHeading[data-long="true"] {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 991px) {
+      #memberNameHeading[data-long="true"] {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      #memberNameHeading[data-long="true"] {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 575px) {
+      #memberNameHeading[data-long="true"] {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #memberNameHeading[data-long="true"] {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 379px) {
+      #memberNameHeading[data-long="true"] {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 319px) {
+      #memberNameHeading[data-long="true"] {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* For names with 50+ characters - even smaller */
+    #memberNameHeading[data-very-long="true"] {
+      font-size: 1.8rem;
+      cursor: help;
+      border-bottom: 1px dotted rgba(255, 207, 110, 0.3);
+    }
+
+    @media (max-width: 991px) {
+      #memberNameHeading[data-very-long="true"] {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      #memberNameHeading[data-very-long="true"] {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 575px) {
+      #memberNameHeading[data-very-long="true"] {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #memberNameHeading[data-very-long="true"] {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 379px) {
+      #memberNameHeading[data-very-long="true"] {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* Clamp for fluid responsiveness */
+    @media (min-width: 768px) {
+      #memberNameHeading {
+        font-size: clamp(1.5rem, 3vw, 3rem);
+      }
+      #memberNameHeading[data-long="true"] {
+        font-size: clamp(1.2rem, 2.5vw, 2rem);
+      }
+      #memberNameHeading[data-very-long="true"] {
+        font-size: clamp(1rem, 2vw, 1.8rem);
+      }
+    }
+
+    /* Prevent any overflow on container */
+    .member-info-content {
+      overflow: visible;
+      max-width: 100%;
+    }
+
+    .member-avatar {
+      max-width: 100%;
+    }
+
+    .contribution-summary p {
+      max-width: 700px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    /* Responsive summary text */
+    @media (max-width: 768px) {
+      .contribution-summary p {
+        font-size: 0.95rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contribution-summary p {
+        font-size: 0.85rem;
+      }
+    }
+
+    .contribution-actions {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.35rem 0.25rem 0.2rem;
+    }
+
+    .contribution-actions a,
+    .contribution-actions button {
+      min-width: 10rem;
+    }
+
+    .contribution-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 0 0.25rem;
+    }
+
+    .contribution-filters .btn {
+      min-width: auto;
+      padding: 0.55rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    /* Responsive filter buttons */
+    @media (max-width: 768px) {
+      .contribution-filters .btn {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contribution-filters .btn {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.7rem;
+      }
+    }
+
+    .contribution-filters .btn img,
+    .contribution-filters .btn svg {
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.14);
+      color: #fff;
+    }
+
+    .btn.secondary:hover,
+    .btn.secondary:focus {
+      background: rgba(255, 255, 255, 0.14);
+      color: #fff;
+    }
+
+    .btn.secondary.active {
+      background: rgba(255, 207, 110, 0.22);
+      border-color: rgba(255, 207, 110, 0.4);
+      color: #fff;
+    }
+
+    /* --- List & Item Styles --- */
+    .contribution-type-section {
+      margin-top: 3rem;
+    }
+
+    .contribution-type-section h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      border-left: 4px solid #ffcf6e;
+      padding-left: 1rem;
+    }
+
+    /* Responsive section titles */
+    @media (max-width: 768px) {
+      .contribution-type-section h2 {
+        font-size: 1.3rem;
+        padding-left: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contribution-type-section h2 {
+        font-size: 1.1rem;
+        padding-left: 0.6rem;
+      }
+    }
+
+    .contribution-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .contribution-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .contribution-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 207, 110, 0.4);
+      transform: translateX(8px);
+    }
+
+    /* Responsive contribution items */
+    @media (max-width: 768px) {
+      .contribution-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+        padding: 1rem;
+      }
+      .contribution-item:hover {
+        transform: translateY(-4px);
+      }
+    }
+
+    .contribution-type-badge {
+      flex-shrink: 0;
+    }
+
+    .contribution-type-badge span {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #ffcf6e;
+      background: rgba(255, 207, 110, 0.1);
+      padding: 0.4rem 0.9rem;
+      border-radius: 30px;
+      white-space: nowrap;
+    }
+
+    /* Responsive badge */
+    @media (max-width: 480px) {
+      .contribution-type-badge span {
+        font-size: 0.6rem;
+        padding: 0.3rem 0.7rem;
+      }
+    }
+
+    .contribution-content { 
+      flex: 1; 
+      min-width: 0;
+    }
+
+    .contribution-empty {
+      padding: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    
+    .contribution-title {
+      margin: 0 0 0.25rem;
+      font-size: 1.1rem;
+    }
+
+    .contribution-title a {
+      color: #fff;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    /* Responsive contribution title */
+    @media (max-width: 480px) {
+      .contribution-title {
+        font-size: 0.95rem;
+      }
+    }
+
+    .contribution-date {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 480px) {
+      .contribution-date {
+        font-size: 0.7rem;
+      }
+    }
+
+    .contribution-excerpt {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 480px) {
+      .contribution-excerpt {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* --- Medium and large screen tweaks --- */
+    @media (max-width: 1024px) {
+      .member-profile-header {
+        gap: 1.75rem;
+      }
+
+      .member-avatar {
+        width: 140px;
+        height: auto;
+        aspect-ratio: 4 / 5;
+      }
+
+      .contribution-summary p {
+        max-width: 100%;
+      }
+
+      .team-page-hero .container,
+      .team-category .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866754402147741" crossorigin="anonymous"></script>
+</head>
+<body class="board-page">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="https://drive.google.com/thumbnail?id=1jaEnOnm2O0w6882JCtHgYNJQ0HcXwzB7&sz=w500" alt="Jeevajyothi Media Logo" class="brand-logo">
+        <span id="headerBrandName">Jeevajyothi Media</span>
+      </a>
+      <nav class="nav"></nav>
+    </div>
+  </header>
+
+  <div class="announcement-bar"><div class="announcement-track"></div></div>
+
+  <main class="team-page contribution-page">
+    <section class="team-page-hero">
+      <div class="container">
+        <span class="team-page-kicker">Board Member Profile</span>
+        
+        <div class="member-profile-header">
+          <div class="member-avatar-container">
+            <img id="memberAvatar" class="member-avatar" src="assets/images/placeholder.svg?v=202605071811" alt="Board member photo">
+          </div>
+
+          <div class="member-info-content">
+            <h1 id="memberNameHeading">Loading profile...</h1>
+            <div class="contribution-summary">
+              <p id="memberSummary">Fetching contributions from news articles, poems, speeches, and voices...</p>
+              
+              <div class="contribution-stats" id="contributionStats"></div>
+              
+              <div class="contribution-actions">
+                <a class="btn secondary" href="board-members.html" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">← Back to Board</a>
+                <div class="contribution-filters" id="filterButtons"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-category">
+      <div class="container">
+        <div id="speechesSection" class="contribution-type-section" hidden>
+          <h2>🎙️ Speeches</h2>
+          <div id="speechesGrid" class="contribution-list"></div>
+        </div>
+        <div id="articlesSection" class="contribution-type-section" hidden>
+          <h2>📝 Articles</h2>
+          <div id="articlesGrid" class="contribution-list"></div>
+        </div>
+        <div id="newsSection" class="contribution-type-section" hidden>
+          <h2>📰 News</h2>
+          <div id="newsGrid" class="contribution-list"></div>
+        </div>
+        <div id="poemsSection" class="contribution-type-section" hidden>
+          <h2>📖 Poems</h2>
+          <div id="poemsGrid" class="contribution-list"></div>
+        </div>
+        <div id="voicesSection" class="contribution-type-section" hidden>
+          <h2>🎤 Voices</h2>
+          <div id="voicesGrid" class="contribution-list"></div>
+        </div>
+        <div id="noContributionsSection" class="contribution-type-section" hidden>
+          <h2>Contributions</h2>
+          <div class="contribution-list">
+            <div class="contribution-empty">No contributions available at the moment. Check back later for updates.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> <span id="footerBrandName">Jeevajyothi Media</span> &bull; <span id="footerText">Believe &bull; Sing &bull; Share</span></p>
+      <div class="social">
+        <a id="footerFacebook" href="https://www.facebook.com/jeevajyothigospelvoice" target="_blank" rel="noopener">
+          <img src="assets/images/facebook.png?v=202605071811" alt="Facebook">
+        </a>
+        <a id="footerInstagram" href="https://www.instagram.com/jeevajyothi_media" target="_blank" rel="noopener">
+          <img src="assets/images/instagram.png?v=202605071811" alt="Instagram">
+        </a>
+        <a id="footerYouTube" href="https://www.youtube.com/@jeevajyothimedia" target="_blank" rel="noopener">
+          <img src="assets/images/youtube.png?v=202605071811" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/loader.js"></script>
+  <script src="scripts/worker-data.js"></script>
+  <script src="assets/js/content-protection.js" defer></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/load-navigators.js"></script>
+
+  <script src="assets/js/load-board-member-v2.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('click', function(e) {
+        const target = e.target.closest('a');
+        if (target && target.href && !target.href.startsWith('javascript:') && target.target !== '_blank') {
+          if (window.LoaderUtils && window.LoaderUtils.showGlobalLoader) {
+            window.LoaderUtils.showGlobalLoader('Loading...');
+          }
+        }
+      });
+    });
+    
+    window.addEventListener('load', function() {
+      if (window.LoaderUtils && window.LoaderUtils.hideGlobalLoader) {
+        window.LoaderUtils.hideGlobalLoader();
+      }
+    });
+    
+    window.truncateToThreeWords = function(text) {
+      if (!text) return '';
+      const plainText = text.replace(/<[^>]*>/g, '');
+      const words = plainText.trim().split(/\s+/);
+      if (words.length <= 3) return plainText;
+      return words.slice(0, 3).join(' ') + '...';
+    };
+    
+    // Helper function to get display label - prioritizes cardLabel over type
+    function getDisplayLabel(item) {
+      if (item.cardLabel && item.cardLabel.trim() !== '') {
+        return item.cardLabel;
+      }
+      if (item.type && item.type.trim() !== '') {
+        return item.type.charAt(0).toUpperCase() + item.type.slice(1);
+      }
+      return 'Voice';
+    }
+    
+    window.createVoiceContributionListItem = function(item, type, url) {
+      const div = document.createElement('div');
+      div.className = 'contribution-item';
+      
+      // Use cardLabel if available, otherwise fallback to type parameter
+      const displayLabel = getDisplayLabel(item);
+      const excerpt = window.truncateToThreeWords(item.excerpt || item.content || item.description || '');
+      const title = item.title || 'Untitled';
+      const date = item.date || item.displayDate || item.publishDate || '';
+      const formattedDate = date ? new Date(date).toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      }) : '';
+      
+      div.innerHTML = `
+        <div class="contribution-type-badge">
+          <span>${escapeHtml(displayLabel)}</span>
+        </div>
+        <div class="contribution-content">
+          <span class="contribution-date">${formattedDate}</span>
+          <h3 class="contribution-title">
+            <a href="${url}">${escapeHtml(title)}</a>
+          </h3>
+          ${excerpt ? `<p class="contribution-excerpt" style="font-size:0.85rem; opacity:0.7; margin:0;">${escapeHtml(excerpt)}</p>` : ''}
+        </div>
+        <div class="contribution-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffcf6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      `;
+      
+      div.addEventListener('click', function(e) {
+        if (!e.target.closest('a')) {
+          window.location.href = url;
+        }
+      });
+      
+      return div;
+    };
+    
+    window.createContributionListItem = function(item, type, url) {
+      const div = document.createElement('div');
+      div.className = 'contribution-item';
+      
+      const excerpt = window.truncateToThreeWords(item.excerpt || item.content || item.description || '');
+      const title = item.title || 'Untitled';
+      const date = item.date || item.publishDate || '';
+      const formattedDate = date ? new Date(date).toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      }) : '';
+      
+      div.innerHTML = `
+        <div class="contribution-type-badge">
+          <span>${escapeHtml(type)}</span>
+        </div>
+        <div class="contribution-content">
+          <span class="contribution-date">${formattedDate}</span>
+          <h3 class="contribution-title">
+            <a href="${url}">${escapeHtml(title)}</a>
+          </h3>
+          ${excerpt ? `<p class="contribution-excerpt" style="font-size:0.85rem; opacity:0.7; margin:0;">${escapeHtml(excerpt)}</p>` : ''}
+        </div>
+        <div class="contribution-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffcf6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      `;
+      
+      div.addEventListener('click', function(e) {
+        if (!e.target.closest('a')) {
+          window.location.href = url;
+        }
+      });
+      
+      return div;
+    };
+    
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    // Add this function to handle long names
+    function handleLongName() {
+      const heading = document.getElementById('memberNameHeading');
+      if (!heading) return;
+      
+      const originalText = heading.textContent;
+      if (originalText && originalText !== 'Loading profile...' && originalText !== 'Board Member Contributions') {
+        // Check if name is long (more than 30 characters)
+        if (originalText.length > 30) {
+          heading.setAttribute('data-long', 'true');
+        } else {
+          heading.setAttribute('data-long', 'false');
+        }
+        
+        // For extremely long names (> 50 chars)
+        if (originalText.length > 50) {
+          heading.setAttribute('data-very-long', 'true');
+          heading.setAttribute('title', originalText);
+        } else {
+          heading.setAttribute('data-very-long', 'false');
+        }
+        
+        // Ensure proper wrapping
+        heading.style.wordBreak = 'break-word';
+        heading.style.whiteSpace = 'normal';
+        heading.style.overflowWrap = 'break-word';
+      }
+    }
+
+    // Observe DOM changes to detect when name is loaded
+    const nameObserver = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList' || mutation.type === 'characterData') {
+          const heading = document.getElementById('memberNameHeading');
+          if (heading && heading.textContent !== 'Loading profile...' && heading.textContent !== 'Board Member Contributions') {
+            handleLongName();
+            nameObserver.disconnect();
+          }
+        }
+      });
+    });
+
+    if (document.getElementById('memberNameHeading')) {
+      nameObserver.observe(document.getElementById('memberNameHeading'), {
+        childList: true,
+        characterData: true,
+        subtree: true
+      });
+    }
+
+    // Also call after page load
+    window.addEventListener('load', function() {
+      setTimeout(handleLongName, 500);
+    });
+  </script>
+</body>
+</html>

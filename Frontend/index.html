@@ -1,0 +1,577 @@
+﻿<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <meta name="yandex" content="notranslate">
+  <link rel="icon" href="favicon.png?v=202605071811">
+  <title>Jeevajyothi Media — Believe • Sing • Share</title>
+  <meta name="description" content="Jeevajyothi Media — Christian messages, worship music, quotes, videos, and community since 2003.">
+  <meta name="preconnect" href="https://fonts.googleapis.com">
+  <meta name="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="canonical" href="/">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=202605071811">
+  <link rel="stylesheet" href="assets/css/skeleton.css?v=202605071811">
+  <link rel="stylesheet" href="assets/css/bible-verse.css?v=202605071811">
+
+  <link rel="preload" href="favicon.png?v=202605071811" as="image">
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+  <meta property="og:title" content="Jeevajyothi Media">
+  <meta property="og:description" content="Believe • Sing • Share">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/">
+  <meta property="og:image" content="https://drive.google.com/thumbnail?id=1jaEnOnm2O0w6882JCtHgYNJQ0HcXwzB7&sz=w500">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866754402147741" crossorigin="anonymous"></script>
+  
+  <style>
+    .programs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:28px; margin-top:20px; }
+    .program-card { background:linear-gradient(135deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,.02) 100%); border-radius:20px; overflow:hidden; transition:all .4s cubic-bezier(.4,0,.2,1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.08); cursor:pointer; height:100%; display:flex; flex-direction:column; position:relative; }
+    .program-card:hover { transform:translateY(-8px); border-color:rgba(255,207,110,.3); box-shadow:0 20px 35px -15px rgba(0,0,0,.3); }
+    .program-card-cover { height:180px; background:linear-gradient(135deg,#1e293b,#0f172a); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
+    .program-card-cover img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .program-card:hover .program-card-cover img { transform:scale(1.05); }
+    .program-card-cover .no-image { color:rgba(255,255,255,.6); font-size:.85rem; text-align:center; padding:20px; }
+    .program-id-badge { position:absolute; top:12px; right:12px; background:rgba(0,0,0,.6); backdrop-filter:blur(4px); padding:4px 10px; border-radius:20px; font-size:.7rem; font-weight:600; color:#ffcf6e; z-index:2; letter-spacing:.5px; }
+    .program-card-body { padding:18px; flex:1; display:flex; flex-direction:column; }
+    .program-card-title { margin:0 0 8px; font-size:1.1rem; font-weight:700; line-height:1.4; color:#fff; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:3rem; }
+    .program-card-summary { margin:0 0 15px; font-size:.85rem; line-height:1.55; color:rgba(255,255,255,.7); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .program-share-container { margin-top:auto; padding-top:12px; }
+    .program-share-btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; background:linear-gradient(135deg,#25D366,#128C7E); color:white; border:none; padding:8px 18px; font-size:.75rem; font-weight:600; border-radius:30px; cursor:pointer; transition:all .3s ease; min-width:100px; }
+    .program-share-btn:hover { transform:translateY(-2px); box-shadow:0 5px 15px rgba(37,211,102,.3); }
+    @media(max-width:768px){ .programs-grid { grid-template-columns:1fr; gap:20px; } .program-card-cover { height:160px; } .program-card-title { font-size:1rem; min-height:2.6rem; } }
+    @media(max-width:480px){ .programs-grid { gap:16px; } .program-card-cover { height:140px; } .program-card-body { padding:14px; } .program-card-title { font-size:.9rem; } .program-card-summary { font-size:.75rem; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="https://drive.google.com/thumbnail?id=1jaEnOnm2O0w6882JCtHgYNJQ0HcXwzB7&sz=w500" alt="Jeevajyothi Media Logo" class="brand-logo">
+        <span id="headerBrandName">Jeevajyothi Media</span>
+      </a>
+      <nav class="nav"></nav>
+    </div>
+  </header>
+
+  <section class="announcement-bar"><div class="announcement-track"></div></section>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="welcome-banner"><span id="welcomeText" class="welcome-word">Welcome</span></div>
+        <h1 id="brandHeading" class="brand-heading">JEEVAJYOTHI<br>MEDIA</h1>
+
+        <p id="subtitle" class="subtitle">Believe • Sing • Share</p>
+        <p id="since2003Text" class="lede">Since 2003, sharing Christian messages and worship music to spread hope, deepen understanding, and glorify God.</p>
+        <a href="voice-hub-submit.html" class="btn btn-primary" style="border-color:#254ed3; font-weight: 600; padding: 0.6rem 1.5rem; font-size: 0.9rem; display: inline-block; text-decoration: none; border-radius: 25px; color: white;">Share Your Voice</a>
+
+        <div class="whatsapp-community" style="margin: 1rem 0; text-align: center;">
+          <a href="https://www.whatsapp.com/channel/0029Va9LliuJZg4A3wN3aN2g" class="btn primary" target="_blank" style="background: #25D366; border-color: #25D366; font-weight: 600; padding: 0.6rem 1.5rem; font-size: 0.9rem; display: inline-block; text-decoration: none; border-radius: 8px; color: white;">📢 Join Our WhatsApp Channel</a>
+        </div>
+
+        <div class="cta-row">
+          <a id="youtubeBtn" class="btn primary" href="https://www.youtube.com/@jeevajyothimedia" target="_blank" rel="noopener">Watch on YouTube</a>
+          <a id="connectBtn" class="btn" href="contact.html" style="background-color:#254ed3">Connect with Us</a>
+        </div>
+      </div>
+    </section>
+    
+    <section id="notice-board" class="notice-section">
+      <div class="container">
+        <h2 class="section-title">📢 Notice Board & Compliments</h2>
+        <div id="notice-board-grid" class="notice-board-container">
+          <div class="notice-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT VOICES SECTION -->
+    <section class="blog-list">
+      <div class="container">
+        <h2>Recent Voices</h2>
+        <div id="home-voices-grid" class="speeches-layout"></div>
+        <p style="text-align: center; margin-top: 32px;"><a class="btn" href="voice-hub.html">View all Voices</a></p>
+      </div>
+    </section>
+
+    <!-- LATEST PROGRAM GUIDE SECTION -->
+    <section id="home-latest-programs" class="blog-list">
+      <div class="container">
+        <h2>Latest Program Guides</h2>
+        <div id="home-program-guide-latest" class="programs-grid"></div>
+        <p style="text-align: center; margin-top: 32px;">
+          <a class="btn" href="program-guide.html">View All Program Guides →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- LATEST UPDATES SECTION -->
+    <section class="blog-list">
+      <div class="container">
+        <h2>Latest Updates</h2>
+        <div id="home-news" class="grid three"></div>
+        <p style="text-align: center; margin-top: 32px;"><a class="btn" href="updates.html">View All Updates</a></p>
+      </div>
+    </section>
+
+    <!-- LATEST SPEECHES SECTION -->
+    <section class="blog-list">
+      <div class="container">
+        <h2>Latest Speeches</h2>
+        <div id="home-speeches" class="speeches-grid"></div>
+        <p style="text-align: center; margin-top: 32px;"><a class="btn" href="Speeches.html">View All Speeches</a></p>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-content">
+      <div class="container">
+        <h2>About <span id="aboutBrandName">Jeevajyothi Media</span></h2>
+        <div id="aboutContent">
+          <p>Welcome to Jeevajyothi Media — your light of faith, sharing Christian messages and worship music since 2003. Through inspired teaching, soulful songs, and uplifting stories, we seek to spread hope, deepen understanding, and glorify God.</p>
+          <p>Along with our media ministry, we also serve through our choir group, dedicated to <strong>glorifying God</strong> in Christian events such as weddings, funerals, conventions, and other special gatherings. With heartfelt voices and harmonies, we aim to comfort, inspire, and uplift every occasion with songs of faith and hope.</p>
+          <p>Join us every week for sermons, worship sessions, and testimonies that transform lives. Whether you are discovering faith or walking the path already — this is your home to grow, praise, and share in Christ's love.</p>
+          <p>Let's shine together: believe, worship, and live His Word.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="newsModal" class="modal" hidden>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span id="footerBrandName">Jeevajyothi Media</span> • <span id="footerText">Believe • Sing • Share</span></p>
+      <div class="social">
+        <a id="footerFacebook" href="https://www.facebook.com/jeevajyothigospelvoice" target="_blank" rel="noopener">
+          <img src="assets/images/facebook.png?v=202605071811" alt="Facebook">
+        </a>
+        <a id="footerInstagram" href="https://www.instagram.com/jeevajyothi_media" target="_blank" rel="noopener">
+          <img src="assets/images/instagram.png?v=202605071811" alt="Instagram">
+        </a>
+        <a id="footerYouTube" href="https://www.youtube.com/@jeevajyothimedia" target="_blank" rel="noopener">
+          <img src="assets/images/youtube.png?v=202605071811" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/content-protection.js" defer></script>
+  <script src="assets/js/loader.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/load-navigators.js" defer></script>
+  <script src="assets/js/notice-board.js" defer></script>
+  <script src="assets/js/bible-verse.js" defer></script>
+  <script src="assets/js/load-whatsapp.js" defer></script>
+  
+  <script>
+    // Voice Hub Functions
+    async function loadHomeVoices() {
+      const container = document.getElementById('home-voices-grid');
+      if (!container) {
+        console.log('Home voices container not found');
+        return;
+      }
+
+      console.log('Loading home voices...');
+      container.innerHTML = '<div class="speech-card"><div class="speech-cover" style="height:180px;background:#2c3e66;"></div><div class="speech-card-footer"><span>Loading voices...</span></div></div>';
+
+      try {
+        let voices = [];
+        
+        try {
+          const apiResponse = await fetch('/api/public/voices');
+          const apiData = await apiResponse.json();
+          if (apiResponse.ok && apiData.success && Array.isArray(apiData.data)) {
+            voices = apiData.data;
+            console.log('Loaded from API:', voices.length);
+          }
+        } catch (apiError) {
+          console.warn('Public voices API unavailable, using local JSON fallback.', apiError);
+        }
+
+        if (!voices.length) {
+          try {
+            const response = await fetch(`${PUBLIC_API_BASE}/voices`);
+            if (response.ok) {
+              voices = await response.json();
+              console.log('Loaded from local JSON:', voices.length);
+            }
+          } catch (e) {
+            console.warn('No local voice-hub.json found');
+          }
+        }
+
+        const recentVoices = voices
+          .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+          .slice(0, 3);
+
+        container.innerHTML = '';
+        
+        if (recentVoices.length === 0) {
+          container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:40px;">No voices available yet. <a href="voice-hub-submit.html">Share your voice →</a></p>';
+          return;
+        }
+
+        recentVoices.forEach(voice => {
+          const card = createHomeVoiceCard(voice);
+          container.appendChild(card);
+        });
+
+      } catch (error) {
+        console.error('Error loading home voices:', error);
+        container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:40px;">Error loading voices. Please try again later.</p>';
+      }
+    }
+
+    function createHomeVoiceCard(voice) {
+      const article = document.createElement('article');
+      article.className = 'speech-card';
+      article.style.cursor = 'pointer';
+
+      const href = `voice-article.html?id=${encodeURIComponent(voice.id || '')}`;
+      const authorImage = voice.authorImage || voice.image || '';
+      const dateStr = voice.date ? new Date(voice.date).toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      }) : '';
+      
+      const coverMarkup = authorImage
+        ? `<img src="${authorImage}" alt="${escapeHtml(voice.authorName || 'Author')}" class="speech-author-thumb" loading="lazy">`
+        : '<span class="speech-cover-icon">🎤 Voice</span>';
+
+      article.innerHTML = `
+        <div class="speech-cover" style="background:linear-gradient(135deg, #2c3e66, #1e2a4a);color:white;display:flex;align-items:center;justify-content:center;">
+          ${coverMarkup}
+        </div>
+        <p class="speech-card-kicker">${escapeHtml(voice.cardLabel || voice.type || 'Voice')}</p>
+        <h3 class="speech-card-title">${escapeHtml(voice.title) || 'Untitled Voice'}</h3>
+        <p class="meta">${escapeHtml(dateStr)}</p>
+        <div class="speech-card-footer">
+          <span class="speech-card-author"><strong>${escapeHtml(voice.authorName) || 'Anonymous'}</strong></span>
+          <button class="btn share-voice-btn" type="button" data-id="${voice.id || ''}">Share</button>
+        </div>
+      `;
+
+      article.addEventListener('click', function(event) {
+        if (!event.target.classList.contains('share-voice-btn')) {
+          window.location.href = href;
+        }
+      });
+
+      const shareBtn = article.querySelector('.share-voice-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          
+          const origin = window.location.origin;
+          const articleUrl = `${origin}/voice-article?id=${voice.id}`;
+          const submitUrl = `${origin}/voice-hub-submit`;
+          
+          const fullText = `*🛑${voice.title || 'Voice'}*
+📝*${voice.authorName || 'Unknown'}*
+🔗 ${articleUrl}
+
+*നിങ്ങളുടെ ചിന്തകളും ലോകമറിയട്ടെ! ✍️*
+
+*ജീവജ്യോതി മീഡിയയിലൂടെ നിങ്ങളുടെ ലേഖനങ്ങളും സന്ദേശങ്ങളും സമൂഹത്തിലേക്ക് പങ്കുവെക്കാം.*
+
+*താഴെ കാണുന്ന ലിങ്ക് വഴി നിങ്ങളുടെ സന്ദേശങ്ങൾ ഞങ്ങൾക്ക് അയച്ചുതരൂ:*
+🔗 ${submitUrl}
+
+*നമുക്ക് ഒന്നിച്ച് നല്ലൊരു നാളെയെ വാർത്തെടുക്കാം! 🤝*
+*🛑Jeevajyothi Media🛑*`;
+          
+          if (navigator.share) {
+            navigator.share({ title: voice.title, text: fullText }).catch(() => {
+              fallbackCopy(fullText);
+            });
+          } else {
+            fallbackCopy(fullText);
+          }
+        });
+      }
+
+      return article;
+    }
+
+    // Load Latest Program Guides for Home Page
+    async function loadHomeProgramGuides() {
+      const container = document.getElementById('home-program-guide-latest');
+      if (!container) {
+        console.warn('home-program-guide-latest container not found');
+        return;
+      }
+
+      try {
+        container.innerHTML = '<div style="text-align:center;padding:40px;">Loading programs...</div>';
+        
+        const response = await fetch(`${PUBLIC_API_BASE}/programs`);
+        if (!response.ok) throw new Error('Failed to load program guide');
+        
+        const data = await response.json();
+        let programs = Array.isArray(data.programs) ? data.programs : [];
+
+        if (!programs.length) {
+          container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:40px;">No programs available yet. <a href="program-guide.html">Browse programs →</a></p>';
+          return;
+        }
+
+        // Sort by ID descending (newest first)
+        programs.sort((a, b) => {
+          const idA = a.id !== undefined ? a.id : 0;
+          const idB = b.id !== undefined ? b.id : 0;
+          return idB - idA;
+        });
+
+        // Take only first 3
+        const latestPrograms = programs.slice(0, 3);
+
+        container.innerHTML = '';
+
+        latestPrograms.forEach(program => {
+          const card = createHomeProgramCard(program);
+          container.appendChild(card);
+        });
+
+      } catch (error) {
+        console.error('Error loading home program guides:', error);
+        container.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:40px;">Error loading programs. Please try again later.</p>';
+      }
+    }
+
+    function getGoogleDriveImageUrl(url) {
+      if (!url) return '';
+      
+      if (url.includes('drive.google.com')) {
+        let fileId = null;
+        
+        let match = url.match(/\/file\/d\/([^\/]+)/);
+        if (match) fileId = match[1];
+        
+        if (!fileId) {
+          match = url.match(/[?&]id=([^&]+)/);
+          if (match) fileId = match[1];
+        }
+        
+        if (!fileId) {
+          match = url.match(/id=([^&]+)/);
+          if (match) fileId = match[1];
+        }
+        
+        if (!fileId) {
+          match = url.match(/thumbnail\?id=([^&]+)/);
+          if (match) fileId = match[1];
+        }
+        
+        if (fileId) {
+          return `https://drive.google.com/thumbnail?id=${fileId}&sz=w500`;
+        }
+      }
+      
+      return url;
+    }
+
+    function createHomeProgramCard(program) {
+      const article = document.createElement('article');
+      article.className = 'program-card';
+      article.setAttribute('data-slug', program.slug || '');
+
+      const slug = program.slug || '';
+      const href = `program-guide-detail.html?slug=${encodeURIComponent(slug)}`;
+      let imgSrc = program.image ? getGoogleDriveImageUrl(program.image) : '';
+      const idBadge = program.id ? `<span class="program-id-badge">#${program.id}</span>` : '';
+
+      article.innerHTML = `
+        <div class="program-card-cover">
+          ${imgSrc ? `<img src="${imgSrc}" alt="${escapeHtml(program.title)}" loading="lazy">` : `<div class="no-image">${escapeHtml((program.title || '').substring(0, 30))}</div>`}
+        </div>
+        ${idBadge}
+        <div class="program-card-body">
+          <h3 class="program-card-title">${escapeHtml(program.title)}</h3>
+          <p class="program-card-summary">${escapeHtml(program.lead)}</p>
+          <div class="program-share-container">
+            <button type="button" class="program-share-btn" data-share-url="${href}" data-title="${escapeHtml(program.title || '')}">📤 Share</button>
+          </div>
+        </div>
+      `;
+
+      article.addEventListener('click', (ev) => {
+        const shareBtn = article.querySelector('.program-share-btn');
+        if (shareBtn && (ev.target === shareBtn || shareBtn.contains(ev.target))) return;
+        window.location.href = href;
+      });
+
+      const shareBtn = article.querySelector('.program-share-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', async (ev) => {
+          ev.preventDefault();
+          ev.stopPropagation();
+          const title = (shareBtn.getAttribute('data-title') || '').trim();
+          const fullLink = window.location.origin.replace(/\/$/, '') + '/' + href.replace(/^\//, '');
+          const text = `*യൂത്ത് മീറ്റിംഗുകൾക്കായി തയ്യാറെടുക്കാം! ✨*\n\n*നിങ്ങളുടെ മീറ്റിംഗുകളിൽ അവതരിപ്പിക്കാൻ വ്യത്യസ്തമായ ഒരു പ്രോഗ്രാം തിരയുകയാണോ? ജീവജ്യോതി മീഡിയ ഒരുക്കുന്ന ഈ പുതിയ പ്രോഗ്രാം പരിചയപ്പെടൂ:*\n\n*📌 Program: ${title}*\n\n*🔗 Link:* ${fullLink}\n\n*യൂത്ത് മീറ്റിംഗുകൾ കൂടുതൽ ആകർഷകമാക്കാൻ ആവശ്യമായ പുതിയ ഐഡിയകളും പ്രോഗ്രാമുകളും ഈ പേജിൽ ലഭ്യമാണ്.*\n\n*നമുക്ക് ഒന്നിച്ച് നല്ലൊരു നാളെയെ വാർത്തെടുക്കാം! 🤝*\n*🛑Jeevajyothi Media🛑*`;
+          try {
+            if (navigator.share) await navigator.share({ title, text });
+            else fallbackCopy(text);
+          } catch (e) { fallbackCopy(text); }
+        });
+      }
+
+      return article;
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function fallbackCopy(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(() => {});
+        return;
+      }
+      const input = document.createElement('textarea');
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+
+    // Initialize everything when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      if (document.getElementById('home-voices-grid')) {
+        loadHomeVoices();
+      }
+      
+      if (document.getElementById('home-program-guide-latest')) {
+        loadHomeProgramGuides();
+      }
+    });
+
+    // Original functions from main.js
+    (function() {
+      function fallbackCopyInternal(text) {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); alert('Copied to clipboard!'); } catch (err) {}
+        document.body.removeChild(ta);
+      }
+
+      window.universalShare = function(text, title) {
+        if (navigator.share) {
+          navigator.share({ title: title, text: text }).catch((err) => {
+            if (err.name !== 'AbortError') fallbackCopyInternal(text);
+          });
+        } else {
+          fallbackCopyInternal(text);
+        }
+      };
+
+      window.shareObituary = function(url, title) {
+        const brandName = document.getElementById('headerBrandName')?.textContent || 'Jeevajyothi Media';
+        const fullText = `*💐Promoted To Glory💐*\n*📌${title}*\n*📝${brandName}*\n🔗 ${url}`;
+        window.universalShare(fullText, 'Obituary');
+      };
+
+      async function fetchHomeSpeeches() {
+        const speechContainer = document.getElementById('home-speeches');
+        if (!speechContainer) return;
+        try {
+          const response = await fetch(`${PUBLIC_API_BASE}/speeches`);
+          const data = await response.json();
+          const speeches = Array.isArray(data) ? data : (data.speeches || []);
+          const latest = speeches.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0)).slice(0, 3);
+          speechContainer.innerHTML = '';
+          latest.forEach(item => {
+            const card = document.createElement('article');
+            card.className = 'speech-card';
+            const img = item.authorImage || item.image || '';
+            card.innerHTML = `
+              <div class="speech-cover" style="background:linear-gradient(135deg, #2c3e66, #1e2a4a);color:white;display:flex;align-items:center;justify-content:center;">
+                ${img ? `<img src="${img}" alt="${item.authorName}" class="speech-author-thumb">` : '<span class="speech-cover-icon">📖 Speech</span>'}
+              </div>
+              <p class="speech-card-kicker">${item.cardLabel || 'പ്രസംഗക്കുറിപ്പ്'}</p>
+              <h3 class="speech-card-title">${item.title}</h3>
+              <div class="speech-card-footer">
+                <span class="speech-card-author"><strong>${item.authorName || 'Speaker'}</strong></span>
+                <button class="btn share-speech-btn speech-card-share" type="button" data-id="${item.id}" data-title="${item.title}" data-author="${item.authorName}">Share</button>
+              </div>`;
+            
+            card.addEventListener('click', (e) => { 
+              if (!e.target.classList.contains('share-speech-btn')) window.location.href = `speech-detail.html?id=${item.id}`; 
+            });
+
+            const shareBtn = card.querySelector('.share-speech-btn');
+            shareBtn.addEventListener('click', function(e) {
+              e.stopPropagation(); e.preventDefault();
+              const baseUrl = window.location.origin;
+              const path = window.location.pathname;
+              const directory = path.substring(0, path.lastIndexOf('/') + 1);
+              const detailUrl = `${baseUrl}${directory}speech-detail?id=${this.dataset.id}`;
+              const brand = document.getElementById('headerBrandName')?.textContent.trim() || 'Jeevajyothi Media';
+              const fullText = `🛡️*${this.dataset.title}*\n📌*${brand} - പ്രസംഗക്കുറിപ്പ്*\n📝*${this.dataset.author}*\n🔗 ${detailUrl}`;
+              window.universalShare(fullText, this.dataset.title);
+            });
+            speechContainer.appendChild(card);
+          });
+        } catch (err) { console.error("Speeches failed", err); }
+      }
+
+      const savedHomePosition = sessionStorage.getItem('homeScrollPosition');
+      if (savedHomePosition !== null) {
+        window.scrollTo(0, parseInt(savedHomePosition, 10));
+        sessionStorage.removeItem('homeScrollPosition');
+      }
+      
+      setTimeout(fetchHomeSpeeches, 500);
+    })();
+
+    // Site Data & Obituaries
+    setTimeout(async () => {
+      if (!window.readSiteData) return;
+      const site = await window.readSiteData();
+      if (!site) return;
+      if (site.other) {
+        const brand = site.other.brandName || "Jeevajyothi Media";
+        document.querySelectorAll('#headerBrandName, #footerBrandName, #aboutBrandName').forEach(el => el.textContent = brand);
+        const head = document.getElementById('brandHeading');
+        if (head) {
+          const p = brand.toUpperCase().split(' ');
+          head.innerHTML = p.length > 1 ? p[0] + '<br>' + p.slice(1).join(' ') : p[0];
+        }
+      }
+      if (site.about?.contentHtml) document.getElementById('aboutContent').innerHTML = site.about.contentHtml;
+    }, 1000);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img').forEach(img => img.ondragstart = () => false);
+      const modal = document.getElementById('newsModal');
+      const close = document.querySelector('.modal-close');
+      if (close) close.onclick = () => { modal.hidden = true; document.body.style.overflow = ''; };
+      modal.onclick = (e) => { if (e.target === modal) { modal.hidden = true; document.body.style.overflow = ''; }};
+    });
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+    }
+
+  </script>
+</body>
+</html>

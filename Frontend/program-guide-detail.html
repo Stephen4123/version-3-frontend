@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <meta name="yandex" content="notranslate">
+  <link rel="icon" href="https://drive.google.com/thumbnail?id=1Lavb4TCE2QFKQ7ig1XlrX30KoLCjJYPp&sz=w1000">
+  <title id="detailPageTitle">Program Detail — Jeevajyothi Media</title>
+  <meta name="description" id="detailPageDesc" content="">
+  <meta property="og:title" id="detailOgTitle" content="">
+  <meta property="og:description" id="detailOgDesc" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" id="detailOgUrl" content="">
+  <meta property="og:type" content="">
+
+  <link rel="stylesheet" href="assets/css/styles.css?v=202605071811">
+  <link rel="stylesheet" href="assets/css/skeleton.css?v=202605071811">
+  
+  <style>
+   /* How to Begin Section Styles */
+.how-to-begin-section {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 24px;
+  backdrop-filter: blur(4px);
+}
+
+.how-to-begin-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  margin: 0 0 20px 0;
+  color: #ffcf6e;
+  font-weight: 600;
+}
+
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.steps-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.steps-list li:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateX(6px);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.step-text {
+  flex: 1;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.program-sections {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.program-sections section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 16px 18px;
+  transition: all 0.3s ease;
+}
+
+.program-sections section:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.program-sections section h3 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffcf6e;
+  border-left: 3px solid #ffcf6e;
+  padding-left: 12px;
+}
+
+/* News Headline Styles */
+.news-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 14px 0;
+  margin-bottom: 6px;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.news-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.news-headline {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.news-details {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.training-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.training-list li {
+  padding: 8px 0;
+  padding-left: 26px;
+  position: relative;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.training-list li:before {
+  content: "🎙️";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  font-size: 0.8rem;
+}
+
+/* Talk Show Q&A Styles */
+.qa-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 16px 0;
+  margin-bottom: 6px;
+}
+
+.qa-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.qa-question {
+  background: rgba(99, 102, 241, 0.12);
+  border-left: 3px solid #6366f1;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.qa-question:before {
+  content: "❓";
+  font-size: 0.85rem;
+  margin-right: 6px;
+}
+
+.qa-answer {
+  padding: 10px 14px;
+  padding-left: 30px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+  font-size: 0.85rem;
+  position: relative;
+}
+
+.qa-answer:before {
+  content: "💬";
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  font-size: 0.85rem;
+}
+
+.episode-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Single Column Layout */
+.single-column {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.content-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px 26px;
+  background: rgba(0, 0, 0, 0.2);
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.content-card:hover {
+  border-color: rgba(255, 207, 110, 0.2);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.content-card h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffcf6e;
+  letter-spacing: -0.3px;
+}
+
+/* Page Hero Title & Subtitle - Desktop */
+.page-hero h1 {
+  font-size: 2.2rem;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.page-hero .subtitle {
+  font-size: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: rgba(191, 251, 86, 0.85);
+}
+
+/* Program Card Title & Summary - Desktop */
+.card h3 {
+  font-size: 1rem;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.card p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Responsive Layouts */
+@media (max-width: 1024px) {
+  .single-column {
+    max-width: 800px;
+  }
+  
+  .content-card {
+    padding: 20px 22px;
+  }
+  
+  .content-card h2 {
+    font-size: 1.2rem;
+  }
+  
+  /* Page Hero - Tablet */
+  .page-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .page-hero .subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .single-column {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+  
+  .content-card {
+    padding: 16px 18px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+  }
+  
+  .content-card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+  }
+  
+  /* Page Hero - Tablet Mobile */
+  .page-hero h1 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  
+  .page-hero .subtitle {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+  
+  /* Program Cards - Tablet Mobile */
+  .card h3 {
+    font-size: 0.9rem;
+  }
+  
+  .card p {
+    font-size: 0.75rem;
+  }
+  
+  .program-sections {
+    gap: 16px;
+  }
+  
+  .program-sections section {
+    padding: 14px;
+    border-radius: 14px;
+  }
+  
+  .program-sections section h3 {
+    font-size: 0.95rem;
+    padding-left: 10px;
+  }
+  
+  .news-headline {
+    font-size: 0.95rem;
+  }
+  
+  .news-details {
+    font-size: 0.82rem;
+  }
+  
+  .news-tag {
+    font-size: 0.55rem;
+    padding: 2px 8px;
+  }
+  
+  .qa-question {
+    font-size: 0.82rem;
+    padding: 8px 12px;
+  }
+  
+  .qa-answer {
+    font-size: 0.82rem;
+    padding-left: 28px;
+  }
+  
+  .training-list li {
+    font-size: 0.82rem;
+    padding-left: 24px;
+  }
+  
+  .steps-list li {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  
+  .step-number {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+  }
+  
+  .step-text {
+    font-size: 0.82rem;
+  }
+  
+  .how-to-begin-section {
+    padding: 18px;
+    border-radius: 16px;
+  }
+  
+  .how-to-begin-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-column {
+    padding: 0 10px;
+  }
+  
+  .content-card {
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+  }
+  
+  .content-card h2 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  
+  /* Page Hero - Mobile */
+  .page-hero h1 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  
+  .page-hero .subtitle {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  /* Program Cards - Mobile */
+  .card h3 {
+    font-size: 0.85rem;
+  }
+  
+  .card p {
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+  
+  .program-sections {
+    gap: 14px;
+  }
+  
+  .program-sections section {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  
+  .program-sections section h3 {
+    font-size: 0.88rem;
+    margin-bottom: 10px;
+    padding-left: 8px;
+  }
+  
+  .news-item {
+    padding: 10px 0;
+  }
+  
+  .news-headline {
+    font-size: 0.88rem;
+  }
+  
+  .news-details {
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+  
+  .news-tag {
+    font-size: 0.5rem;
+    padding: 2px 6px;
+    margin-bottom: 6px;
+  }
+  
+  .qa-item {
+    padding: 12px 0;
+  }
+  
+  .qa-question {
+    font-size: 0.78rem;
+    padding: 8px 10px;
+  }
+  
+  .qa-answer {
+    font-size: 0.78rem;
+    padding: 8px 10px;
+    padding-left: 28px;
+  }
+  
+  .qa-answer:before {
+    top: 8px;
+    font-size: 0.8rem;
+  }
+  
+  .training-list li {
+    font-size: 0.78rem;
+    padding: 6px 0;
+    padding-left: 24px;
+  }
+  
+  .training-list li:before {
+    font-size: 0.75rem;
+    top: 6px;
+  }
+  
+  .steps-list li {
+    padding: 8px 10px;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .step-number {
+    min-width: 22px;
+    width: 22px;
+    height: 22px;
+    font-size: 0.65rem;
+  }
+  
+  .step-text {
+    font-size: 0.78rem;
+  }
+  
+  .how-to-begin-section {
+    padding: 14px;
+    margin-top: 18px;
+    border-radius: 14px;
+  }
+  
+  .how-to-begin-section h2 {
+    font-size: 1rem;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 380px) {
+  .content-card {
+    padding: 12px 14px;
+  }
+  
+  .content-card h2 {
+    font-size: 0.95rem;
+  }
+  
+  /* Page Hero - Small Mobile */
+  .page-hero h1 {
+    font-size: 1.2rem;
+  }
+  
+  .page-hero .subtitle {
+    font-size: 0.75rem;
+  }
+  
+  /* Program Cards - Small Mobile */
+  .card h3 {
+    font-size: 0.8rem;
+  }
+  
+  .card p {
+    font-size: 0.7rem;
+  }
+  
+  .program-sections section h3 {
+    font-size: 0.85rem;
+  }
+  
+  .news-headline {
+    font-size: 0.85rem;
+  }
+  
+  .qa-question,
+  .qa-answer,
+  .training-list li,
+  .step-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Page Hero - Extra Small Mobile */
+  .page-hero h1 {
+    font-size: 1.1rem;
+  }
+  
+  .page-hero .subtitle {
+    font-size: 0.7rem;
+  }
+  
+  /* Program Cards - Extra Small Mobile */
+  .card h3 {
+    font-size: 0.75rem;
+  }
+  
+  .card p {
+    font-size: 0.65rem;
+  }
+}
+
+/* Landscape mode adjustments */
+@media (max-width: 900px) and (orientation: landscape) {
+  .single-column {
+    max-width: 95%;
+  }
+  
+  .content-card {
+    padding: 14px 18px;
+  }
+  
+  .program-sections {
+    gap: 12px;
+  }
+  
+  /* Page Hero - Landscape */
+  .page-hero h1 {
+    font-size: 1.4rem;
+  }
+  
+  .page-hero .subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improved readability for longer content */
+.news-details, .qa-answer, .step-text, .training-list li {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Subtle animations */
+.content-card, .program-sections section, .steps-list li {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* ============================================
+   BIBLE CONNECTION GAME - SPECIALIZED STYLES
+   Game-themed design with interactive elements
+   ============================================ */
+
+/* Game Mode Badges */
+.game-mode-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+/* Connection Cards - Database Style */
+.connection-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(5, 150, 105, 0.03));
+  border-left: 4px solid #10b981;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.connection-card:hover {
+  transform: translateX(8px);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(5, 150, 105, 0.05));
+}
+
+/* Connection Tags */
+.connection-tag {
+  display: inline-block;
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Verse ↔ Event Connection Styling */
+.verse-event-block {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 207, 110, 0.15);
+  transition: all 0.2s ease;
+}
+
+.verse-event-block:hover {
+  background: rgba(255, 207, 110, 0.05);
+  border-color: rgba(255, 207, 110, 0.3);
+}
+
+.verse-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffcf6e;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.connection-arrow {
+  font-size: 1rem;
+  color: #10b981;
+  margin: 8px 0;
+  text-align: center;
+}
+
+.event-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.55;
+}
+
+/* Person-Story Grid */
+.person-story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.person-story-item {
+  background: rgba(99, 102, 241, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  transition: all 0.3s ease;
+}
+
+.person-story-item:hover {
+  transform: translateY(-3px);
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.person-name {
+  font-weight: 800;
+  color: #a855f7;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.story-detail {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+/* Image Connection Emoji Grid */
+.emoji-connection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.emoji-item {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(217, 119, 6, 0.03));
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.emoji-item:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(217, 119, 6, 0.08));
+}
+
+.emoji-icons {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  letter-spacing: 5px;
+}
+
+.emoji-description {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* OT-NT Connection Styling */
+.ot-nt-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(109, 40, 217, 0.03));
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.ot-nt-card:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(109, 40, 217, 0.05));
+}
+
+.ot-part {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+}
+
+.ot-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.ot-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #c084fc;
+}
+
+.connection-symbol {
+  font-size: 1.2rem;
+  color: #10b981;
+}
+
+.nt-part {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+}
+
+.nt-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.nt-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #34d399;
+}
+
+/* Verse-Verse Parallel Cards */
+.verse-pair {
+  background: rgba(6, 182, 212, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.verse-pair:hover {
+  background: rgba(6, 182, 212, 0.12);
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.verse-first {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #67e8f9;
+  margin-bottom: 8px;
+}
+
+.pair-arrow {
+  font-size: 0.9rem;
+  color: #06b6d4;
+  margin: 5px 0;
+}
+
+.verse-second {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #67e8f9;
+}
+
+/* Place-Event Grid */
+.place-event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.place-event-item {
+  background: rgba(236, 72, 153, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.place-event-item:hover {
+  transform: translateY(-3px);
+  background: rgba(236, 72, 153, 0.12);
+}
+
+.place-name {
+  font-weight: 800;
+  color: #f472b6;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.event-name {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Section Divider for Categories */
+.category-divider {
+  margin: 30px 0 20px 0;
+  position: relative;
+}
+
+.category-divider h3 {
+  background: linear-gradient(90deg, rgba(255, 207, 110, 0.2), transparent);
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* Points System Badge */
+.points-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 15px;
+  margin-left: 8px;
+}
+
+/* Question Item Styling */
+.question-item {
+  background: rgba(255, 207, 110, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-left: 3px solid #ffcf6e;
+}
+
+.question-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffcf6e;
+  margin-bottom: 8px;
+}
+
+.question-answer {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+}
+
+/* Strategy Tips Grid */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.strategy-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.strategy-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 207, 110, 0.2);
+}
+
+.strategy-icon {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.strategy-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffcf6e;
+  margin-bottom: 8px;
+}
+
+.strategy-desc {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+/* Game Mode Cards */
+.gamemode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.gamemode-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.03));
+  border-radius: 16px;
+  padding: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.gamemode-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.15);
+}
+
+.gamemode-tag {
+  display: inline-block;
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.gamemode-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.gamemode-desc {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+/* Material Cards */
+.material-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.material-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.material-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.material-icon {
+  font-size: 1.5rem;
+}
+
+.material-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* How to Begin Steps - Game Theme */
+.how-to-begin-section {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(5, 150, 105, 0.03));
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 20px;
+  padding: 28px;
+  margin-top: 28px;
+}
+
+.steps-list li {
+  border-left: 3px solid #10b981;
+}
+
+.step-number {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .person-story-grid,
+  .emoji-connection-grid,
+  .place-event-grid,
+  .strategy-grid,
+  .gamemode-grid,
+  .material-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ot-nt-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .connection-symbol {
+    transform: rotate(90deg);
+  }
+  
+  .verse-text {
+    font-size: 0.85rem;
+  }
+  
+  .event-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .connection-card {
+    padding: 12px;
+  }
+  
+  .verse-event-block {
+    padding: 10px 12px;
+  }
+  
+  .verse-text {
+    font-size: 0.8rem;
+  }
+  
+  .person-name {
+    font-size: 0.9rem;
+  }
+  
+  .emoji-icons {
+    font-size: 1.4rem;
+  }
+}
+
+/* Animation for Game Elements */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+  }
+}
+
+.gamemode-card:hover {
+  animation: pulse-glow 1s ease infinite;
+}
+
+/* Score Badge */
+.score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  color: #f59e0b;
+  margin-bottom: 10px;
+}
+
+/* Game Title Highlight */
+.game-title-highlight {
+  background: linear-gradient(135deg, #ffcf6e, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Leaderboard Style */
+.leaderboard-hint {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+  border-radius: 12px;
+  padding: 10px 15px;
+  font-size: 0.8rem;
+  color: #fbbf24;
+  text-align: center;
+  margin-top: 15px;
+}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="https://drive.google.com/thumbnail?id=1jaEnOnm2O0w6882JCtHgYNJQ0HcXwzB7&sz=w500" alt="Jeevajyothi Media Logo" class="brand-logo">
+        <span id="headerBrandName">Jeevajyothi Media</span>
+      </a>
+      <nav class="nav"></nav>
+    </div>
+  </header>
+
+  <div class="announcement-bar"><div class="announcement-track"></div></div>
+  <div class="sidebar-ad left-ad ad-editable" style="top: 78.75%;">
+    <a id="leftAdLink2" href="tel:+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="leftAdImage2" src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+      <p id="leftAdText2" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+  <div class="sidebar-ad right-ad ad-editable" style="top: 78.75%;">
+    <a id="rightAdLink2" href="https://wa.me/+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="rightAdImage2" src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+      <p id="rightAdText2" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+  <div class="sidebar-ad left-ad ad-editable" style="top: 257px;">
+    <a id="leftAdLink" href="tel:+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="leftAdImage" src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+      <p id="leftAdText" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+  <div class="sidebar-ad right-ad ad-editable" style="top: 257px;">
+    <a id="rightAdLink" href="https://wa.me/+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="rightAdImage" src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+      <p id="rightAdText" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <a href="program-guide.html" class="btn" style="text-decoration:none; margin-bottom:14px;">← Back to Program Guide</a>
+        <h1 id="programDetailTitle" style="margin:0 0 8px;">Program</h1>
+        <p id="programDetailLead" class="subtitle" style="max-width:900px;">&nbsp;</p>
+
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;">
+  <button id="programShareBtn" type="button" class="btn" style="text-decoration:none;">
+    Share this Program
+  </button>
+</div>
+
+      </div>
+    </section>
+
+    <section class="blog-list">
+      <div class="container">
+        <div class="single-column">
+          <!-- Verse Section -->
+          <div id="programDetailVerse" style="display:none; margin-bottom:24px; padding:16px; border-radius:14px; border:1px solid rgba(34,211,238,0.25); background: rgba(34,211,238,0.08);">
+            <div id="programDetailVerseRef" style="font-weight:700; margin-bottom:8px; color: #67e8f9;"></div>
+            <div id="programDetailVerseText" style="font-style: italic; color: rgba(255,255,255,0.92);"></div>
+          </div>
+
+          <!-- Skeleton Loading -->
+          <div id="programDetailSkeleton">
+            <div class="skeleton-detail-card" style="margin-bottom:24px;">
+              <div class="skeleton skeleton-detail-line"></div>
+              <div class="skeleton skeleton-detail-line"></div>
+              <div class="skeleton skeleton-detail-line short"></div>
+            </div>
+            <div class="skeleton-detail-card">
+              <div class="skeleton skeleton-detail-line"></div>
+              <div class="skeleton skeleton-detail-line"></div>
+              <div class="skeleton skeleton-detail-line short"></div>
+            </div>
+          </div>
+
+          <!-- What to Know Section -->
+          <div class="content-card">
+            <h2>📺 What to Know</h2>
+            <div id="programDetailSections" class="program-sections"></div>
+          </div>
+
+          <!-- Quick Summary Section -->
+          <div class="content-card">
+            <h2>📖 Quick Summary</h2>
+            <p id="programDetailSummary" class="text" style="color: rgba(255,255,255,0.85); line-height:1.6;"></p>
+          </div>
+
+          <!-- How to Begin Section -->
+          <div id="howToBeginContainer" style="display:none;">
+            <div class="content-card">
+              <h2>📋 How to Begin</h2>
+              <div id="howToBeginContent"></div>
+            </div>
+          </div>
+        </div>
+
+        <p id="programDetailNotFound" style="display:none; text-align:center; padding:24px 0; color: var(--text-muted);">
+          Program not found.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span id="footerBrandName">Jeevajyothi Media</span> • <span id="footerText">Believe • Sing • Share</span></p>
+      <div class="social">
+        <a id="footerFacebook" href="https://www.facebook.com/jeevajyothigospelvoice" target="_blank" rel="noopener">
+          <img src="assets/images/facebook.png?v=202605071811" alt="Facebook">
+        </a>
+        <a id="footerInstagram" href="https://www.instagram.com/jeevajyothi_media" target="_blank" rel="noopener">
+          <img src="assets/images/instagram.png?v=202605071811" alt="Instagram">
+        </a>
+        <a id="footerYouTube" href="https://www.youtube.com/@jeevajyothimedia" target="_blank" rel="noopener">
+          <img src="assets/images/youtube.png?v=202605071811" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/loader.js?v=202605071811" defer></script>
+  <script src="assets/js/content-protection.js?v=202605071811" defer></script>
+  <script src="assets/js/load-navigators.js?v=202605071811" defer></script>
+  <script src="assets/js/main.js?v=202605071811"></script>
+  <script src="assets/js/load-whatsapp.js?v=202605071811" defer></script>
+
+  <script>
+    /* Program Guide Detail JavaScript */
+    (function() {
+      const API_BASE = 'http://localhost:3000/api/public';
+
+
+      async function loadPrograms() {
+        try {
+          const res = await fetch(`${API_BASE}/programs?t=${Date.now()}`);
+          if (!res.ok) throw new Error('Failed to load programs');
+          const data = await res.json();
+          if (Array.isArray(data)) return data;
+          return Array.isArray(data.data) ? data.data : (Array.isArray(data.programs) ? data.programs : []);
+
+        } catch (e) {
+          console.error('ProgramGuide loadPrograms error:', e);
+          return [];
+        }
+      }
+
+      function escapeHtml(s) {
+        if (s === null || s === undefined) return '';
+        return String(s).replace(/[&<>"']/g, (c) => {
+          const m = { '&': '&amp;', '<': '<', '>': '>', '"': '"', "'": '&#39;' };
+          return m[c] || c;
+        });
+      }
+
+      function renderHowToBegin(howToBegin) {
+        if (!howToBegin) return '';
+        
+        let html = '';
+        
+        if (howToBegin.title) {
+          html += `<h3 style="margin:0 0 15px 0; font-size:1rem; color:#ffcf6e;">🎯 ${escapeHtml(howToBegin.title)}</h3>`;
+        }
+        
+        if (howToBegin.steps && Array.isArray(howToBegin.steps) && howToBegin.steps.length > 0) {
+          html += `<ul class="steps-list">`;
+          howToBegin.steps.forEach((step, index) => {
+            html += `
+              <li>
+                <span class="step-number">${index + 1}</span>
+                <span class="step-text">${escapeHtml(step)}</span>
+              </li>
+            `;
+          });
+          html += `</ul>`;
+        }
+        
+        return html;
+      }
+
+      function parseBold(text) {
+        return text.split('**').map((part, i) => i % 2 === 1 ? `<strong>${escapeHtml(part)}</strong>` : escapeHtml(part)).join('');
+      }
+
+      function renderSections(sections) {
+        if (!sections || !Array.isArray(sections)) return '';
+        return sections.map(section => {
+          const items = Array.isArray(section.items) ? section.items : [];
+          if (!items.length) return '';
+          const first = items[0];
+
+          // Q&A: items have question/answer
+          if (typeof first === 'object' && first.question !== undefined) {
+            const title = escapeHtml(section.title.replace(/\s*\(Q&A with .+?\)\s*$/, '').replace(/\s*\(Exploring with .+?\)\s*$/, ''));
+            return `<section>
+              <h3>🎙️ ${title}</h3>
+              <div class="qa-items">${items.map(item => `
+                <div class="qa-item">
+                  <div class="qa-question">${escapeHtml(item.question)}</div>
+                  <div class="qa-answer">${escapeHtml(item.answer)}</div>
+                </div>`).join('')}
+              </div>
+            </section>`;
+          }
+
+          // News: items have headline/details
+          if (typeof first === 'object' && first.headline !== undefined) {
+            return `<section>
+              <h3>📰 ${escapeHtml(section.title)}</h3>
+              <div class="news-items">${items.map(item => `
+                <div class="news-item">
+                  ${item.tag ? `<span class="news-tag">${escapeHtml(item.tag)}</span>` : ''}
+                  <h4 class="news-headline">${escapeHtml(item.headline)}</h4>
+                  <p class="news-details">${parseBold(item.details || '').replace(/\n/g, '<br>')}</p>
+                </div>`).join('')}
+              </div>
+            </section>`;
+          }
+
+          // Training/Tips: items are plain strings with **bold**
+          if (typeof first === 'string') {
+            return `<section>
+              <h3>📋 ${escapeHtml(section.title)}</h3>
+              <ul class="training-list">${items.map(item => `<li>${parseBold(item)}</li>`).join('')}</ul>
+            </section>`;
+          }
+
+          return '';
+        }).join('');
+      }
+
+      function renderDetailNow(program) {
+        const title = document.getElementById('programDetailTitle');
+        const lead = document.getElementById('programDetailLead');
+        const summary = document.getElementById('programDetailSummary');
+        const sectionsEl = document.getElementById('programDetailSections');
+
+        const verseWrap = document.getElementById('programDetailVerse');
+        const verseRef = document.getElementById('programDetailVerseRef');
+        const verseText = document.getElementById('programDetailVerseText');
+
+        const notFound = document.getElementById('programDetailNotFound');
+        const howToBeginContainer = document.getElementById('howToBeginContainer');
+        const howToBeginContent = document.getElementById('howToBeginContent');
+        const skeleton = document.getElementById('programDetailSkeleton');
+
+        if (!title || !lead || !summary || !sectionsEl) return;
+
+        if (skeleton) skeleton.style.display = 'none';
+
+        if (!program) {
+          if (notFound) notFound.style.display = 'block';
+          if (howToBeginContainer) howToBeginContainer.style.display = 'none';
+          return;
+        }
+
+        if (notFound) notFound.style.display = 'none';
+
+        title.textContent = program.title || 'Program';
+        lead.textContent = program.lead || '';
+        summary.textContent = program.summary || '';
+
+        // Update page meta dynamically
+        const pageTitle = (program.title || 'Program') + ' — Jeevajyothi Media';
+        document.title = pageTitle;
+        const metaDesc = document.getElementById('detailPageDesc');
+        const ogTitle = document.getElementById('detailOgTitle');
+        const ogDesc = document.getElementById('detailOgDesc');
+        const ogUrl = document.getElementById('detailOgUrl');
+        if (metaDesc) metaDesc.content = program.lead || program.summary || pageTitle;
+        if (ogTitle) ogTitle.content = pageTitle;
+        if (ogDesc) ogDesc.content = program.lead || program.summary || '';
+        if (ogUrl) ogUrl.content = window.location.href.replace(/\.html(\?|$)/, '$1');
+
+        // Verse handling
+        if (verseWrap && program.verse && program.verseText) {
+          verseRef.textContent = program.verse;
+          verseText.textContent = program.verseText;
+          verseWrap.style.display = 'block';
+        } else if (verseWrap) {
+          verseWrap.style.display = 'none';
+        }
+
+        // Sections handling
+        sectionsEl.innerHTML = renderSections(program.sections);
+
+        // How to Begin handling
+        if (howToBeginContainer && howToBeginContent && program.howToBegin) {
+          howToBeginContainer.style.display = 'block';
+          howToBeginContent.innerHTML = renderHowToBegin(program.howToBegin);
+        } else if (howToBeginContainer) {
+          howToBeginContainer.style.display = 'none';
+        }
+      }
+
+      async function renderDetail(slug) {
+        try {
+          const res = await fetch(`${API_BASE}/program/${encodeURIComponent(slug)}?t=${Date.now()}`);
+          if (!res.ok) throw new Error('Failed to load program');
+          const program = await res.json();
+          renderDetailNow(program);
+        } catch (e) {
+          console.error('ProgramGuide renderDetail error:', e);
+          renderDetailNow(null);
+        }
+      }
+
+
+      window.ProgramGuide = window.ProgramGuide || {};
+      window.ProgramGuide.renderDetail = renderDetail;
+    })();
+
+    // Main initialization
+    document.addEventListener('DOMContentLoaded', function () {
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+
+      if (window.ProgramGuide && typeof window.ProgramGuide.renderDetail === 'function') {
+        window.ProgramGuide.renderDetail(slug);
+      }
+
+      const shareBtn = document.getElementById('programShareBtn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', async function () {
+          try {
+            const titleEl = document.getElementById('programDetailTitle');
+            const title = titleEl ? (titleEl.textContent || '').trim() : '';
+            
+            let shareLink = window.location.href;
+            shareLink = shareLink.replace(/\.html$/, '');
+            shareLink = shareLink.replace(/\/$/, '');
+            shareLink = shareLink.replace(/\.html\?/, '?');
+            shareLink = shareLink.replace(/\.html$/, '');
+
+            const text = `*യൂത്ത് മീറ്റിംഗുകൾക്കായി തയ്യാറെടുക്കാം! ✨*
+
+*നിങ്ങളുടെ മീറ്റിംഗുകളിൽ അവതരിപ്പിക്കാൻ വ്യത്യസ്തമായ ഒരു പ്രോഗ്രാം തിരയുകയാണോ? ജീവജ്യോതി മീഡിയ ഒരുക്കുന്ന ഈ പുതിയ പ്രോഗ്രാം പരിചയപ്പെടൂ:*
+
+*📌 Program: ${title}*
+
+*🔗 Link:* ${shareLink}
+
+*യൂത്ത് മീറ്റിംഗുകൾ കൂടുതൽ ആകർഷകമാക്കാൻ ആവശ്യമായ പുതിയ ഐഡിയകളും പ്രോഗ്രാമുകളും ഈ പേജിൽ ലഭ്യമാണ്.*
+
+*നമുക്ക് ഒന്നിച്ച് നല്ലൊരു നാളെയെ വാർത്തെടുക്കാം! 🤝*
+*🛑Jeevajyothi Media🛑*`;
+
+            if (navigator.share) {
+              navigator.share({ title: title || 'Program', text: text });
+            } else if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(text);
+              alert('Share text copied to clipboard!');
+            } else {
+              alert('Sharing is not supported in this browser.');
+            }
+          } catch (e) {
+            console.error('Program share failed:', e);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <meta name="yandex" content="notranslate">
+  <link rel="icon" href="https://drive.google.com/thumbnail?id=1Lavb4TCE2QFKQ7ig1XlrX30KoLCjJYPp&sz=w1000">
+  <title>Program Guide for Youth — Jeevajyothi Media</title>
+  <meta name="description" content="Christian Program Guide for Youth — explore each program card and open the details page.">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="https://jeevajyothimedia.in/program-guide">
+  <meta property="og:type" content="">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=202605071811">
+  <link rel="stylesheet" href="assets/css/skeleton.css?v=202605071811">
+  
+  <style>
+    /* Program Guide Card Styles */
+    .programs-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .programs-header h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #ffcf6e;
+    }
+    
+    .programs-header p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+    
+    /* Grid Layout */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+    
+    /* Card Styles */
+    .program-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .program-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 207, 110, 0.3);
+      box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+    }
+    
+    /* Card Cover Image */
+    .program-card-cover {
+      height: 180px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .program-card-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .program-card:hover .program-card-cover img {
+      transform: scale(1.05);
+    }
+    
+    .program-card-cover .no-image {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    /* ID Badge */
+    .program-id-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #ffcf6e;
+      z-index: 2;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Card Body */
+    .program-card-body {
+      padding: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .program-card-title {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #fff;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 3rem;
+    }
+    
+    .program-card-summary {
+      margin: 0 0 15px 0;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.7);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    /* Share Button Container */
+    .program-share-container {
+      margin-top: auto;
+      padding-top: 12px;
+    }
+    
+    .program-share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: auto;
+      min-width: 100px;
+    }
+    
+    .program-share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    }
+    
+    /* Empty State */
+    .programs-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255, 255, 255, 0.6);
+      font-style: italic;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .programs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .program-card-cover {
+        height: 160px;
+      }
+      
+      .program-card-title {
+        font-size: 1rem;
+        min-height: 2.6rem;
+      }
+      
+      .program-card-summary {
+        font-size: 0.8rem;
+      }
+      
+      .program-share-btn {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+        min-width: 90px;
+      }
+      
+      .programs-header h2 {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .programs-grid {
+        gap: 16px;
+      }
+      
+      .program-card-cover {
+        height: 140px;
+      }
+      
+      .program-card-body {
+        padding: 14px;
+      }
+      
+      .program-card-title {
+        font-size: 0.9rem;
+      }
+      
+      .program-card-summary {
+        font-size: 0.75rem;
+        -webkit-line-clamp: 3;
+      }
+      
+      .program-share-btn {
+        padding: 5px 12px;
+        font-size: 0.65rem;
+      }
+    }
+    
+    /* Animation for cards */
+    @keyframes cardFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    
+    .program-card {
+      animation: cardFadeIn 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="https://drive.google.com/thumbnail?id=1jaEnOnm2O0w6882JCtHgYNJQ0HcXwzB7&sz=w500" alt="Jeevajyothi Media Logo" class="brand-logo">
+        <span id="headerBrandName">Jeevajyothi Media</span>
+      </a>
+      <nav class="nav"></nav>
+    </div>
+  </header>
+
+  <div class="announcement-bar"><div class="announcement-track"></div></div>
+  <div class="sidebar-ad left-ad ad-editable" style="top: 78.75%;">
+    <a id="leftAdLink2" href="tel:+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="leftAdImage2" src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+      <p id="leftAdText2" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+  <div class="sidebar-ad right-ad ad-editable" style="top: 78.75%;">
+    <a id="rightAdLink2" href="https://wa.me/+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="rightAdImage2" src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+      <p id="rightAdText2" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+  <div class="sidebar-ad left-ad ad-editable" style="top: 257px;">
+    <a id="leftAdLink" href="tel:+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="leftAdImage" src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+      <p id="leftAdText" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+  <div class="sidebar-ad right-ad ad-editable" style="top: 257px;">
+    <a id="rightAdLink" href="https://wa.me/+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="rightAdImage" src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+      <p id="rightAdText" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 style="margin:0 0 8px;">Program Guide for Youth</h1>
+        <p class="subtitle" style="max-width:900px;">
+          Christian youth programs — open each card to read what to expect, who it's for, and how to get involved.
+        </p>
+      </div>
+    </section>
+
+    <section class="blog-list">
+      <div class="container">
+        <div class="programs-header">
+          <h2>✨ Select a Program</h2>
+          <p>Discover meaningful programs designed to inspire and equip young hearts</p>
+        </div>
+
+
+
+        <div id="programGuideGrid" class="programs-grid">
+          <!-- Skeleton Loading -->
+          <div class="skeleton-site-card">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text short"></div>
+          </div>
+          <div class="skeleton-site-card">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text short"></div>
+          </div>
+          <div class="skeleton-site-card">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text short"></div>
+          </div>
+        </div>
+
+
+        <p id="programGuideEmpty" class="programs-empty" style="display:none;">
+          No programs available.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span id="footerBrandName">Jeevajyothi Media</span> • <span id="footerText">Believe • Sing • Share</span></p>
+      <div class="social">
+        <a id="footerFacebook" href="https://www.facebook.com/jeevajyothigospelvoice" target="_blank" rel="noopener">
+          <img src="assets/images/facebook.png?v=202605071811" alt="Facebook">
+        </a>
+        <a id="footerInstagram" href="https://www.instagram.com/jeevajyothi_media" target="_blank" rel="noopener">
+          <img src="assets/images/instagram.png?v=202605071811" alt="Instagram">
+        </a>
+        <a id="footerYouTube" href="https://www.youtube.com/@jeevajyothimedia" target="_blank" rel="noopener">
+          <img src="assets/images/youtube.png?v=202605071811" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/loader.js?v=202605071811" defer></script>
+  <script src="assets/js/content-protection.js?v=202605071811" defer></script>
+  <script src="assets/js/load-navigators.js?v=202605071811" defer></script>
+  <script src="assets/js/main.js?v=202605071811" defer></script>
+  <script src="assets/js/load-whatsapp.js?v=202605071811" defer></script>
+
+  <script>
+    /* Program Guide (Frontend/HTML) */
+    (function () {
+      const API_BASE = 'http://localhost:3000/api/public';
+
+
+      // Function to convert Google Drive link to direct image URL
+      function getGoogleDriveImageUrl(url) {
+        if (!url) return '';
+        
+        if (url.includes('drive.google.com')) {
+          let fileId = null;
+          
+          let match = url.match(/\/file\/d\/([^\/]+)/);
+          if (match) fileId = match[1];
+          
+          if (!fileId) {
+            match = url.match(/[?&]id=([^&]+)/);
+            if (match) fileId = match[1];
+          }
+          
+          if (!fileId) {
+            match = url.match(/id=([^&]+)/);
+            if (match) fileId = match[1];
+          }
+          
+          if (!fileId) {
+            match = url.match(/thumbnail\?id=([^&]+)/);
+            if (match) fileId = match[1];
+          }
+          
+          if (fileId) {
+            return `https://drive.google.com/thumbnail?id=${fileId}&sz=w500`;
+          }
+        }
+        
+        return url;
+      }
+
+      async function loadPrograms() {
+        try {
+          const res = await fetch(`${API_BASE}/programs?t=${Date.now()}`);
+          if (!res.ok) throw new Error('Failed to load programs');
+          const data = await res.json();
+          if (Array.isArray(data)) return data;
+          return Array.isArray(data.data) ? data.data : (Array.isArray(data.programs) ? data.programs : []);
+
+        } catch (e) {
+          console.error('ProgramGuide loadPrograms error:', e);
+          return [];
+        }
+      }
+
+      function escapeHtml(s) {
+        if (s === null || s === undefined) return '';
+        return String(s).replace(/[&<>"']/g, (c) => {
+          const m = { '&': '&amp;', '<': '<', '>': '>', '"': '"', "'": '&#39;' };
+          return m[c] || c;
+        });
+      }
+
+      function getCleanShareUrl(url) {
+        if (!url) return '';
+        let cleanUrl = url.replace(/\.html$/, '');
+        cleanUrl = cleanUrl.replace(/\.html\?/, '?');
+        cleanUrl = cleanUrl.replace(/\.html#/, '#');
+        return cleanUrl;
+      }
+
+      function buildCard(program, index) {
+        const slug = program.slug;
+        const href = `program-guide-detail.html?slug=${encodeURIComponent(slug)}`;
+        const cleanHref = getCleanShareUrl(href);
+        const imgSrc = program.image ? getGoogleDriveImageUrl(program.image) : '';
+        const idDisplay = program.id ? `<span class="program-id-badge">#${program.id}</span>` : '';
+
+        return `
+          <article class="program-card" data-slug="${escapeHtml(slug)}" data-id="${program.id || index}">
+            <div class="program-card-cover">
+              ${imgSrc ? `<img src="${imgSrc}" alt="${escapeHtml(program.title)}" loading="lazy">` : `<div class="no-image">${escapeHtml(program.title.substring(0, 30))}</div>`}
+            </div>
+            ${idDisplay}
+            <div class="program-card-body">
+              <h3 class="program-card-title">${escapeHtml(program.title)}</h3>
+              <p class="program-card-summary">${escapeHtml(program.lead)}</p>
+              <div class="program-share-container">
+                <button type="button" class="program-share-btn" data-share-url="${cleanHref}" data-title="${escapeHtml(program.title || '')}">
+                  📤 Share
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      async function renderGrid() {
+        const grid = document.getElementById('programGuideGrid');
+        const empty = document.getElementById('programGuideEmpty');
+        if (!grid) return;
+
+        let programs = await loadPrograms();
+
+        if (!programs.length) {
+          if (empty) empty.style.display = 'block';
+          return;
+        }
+
+        // Sort by ID in descending order if IDs exist, otherwise by index
+        programs.sort((a, b) => {
+          const idA = a.id !== undefined ? a.id : 0;
+          const idB = b.id !== undefined ? b.id : 0;
+          return idB - idA;
+        });
+
+        grid.innerHTML = programs.map((program, idx) => buildCard(program, idx)).join('');
+
+        grid.querySelectorAll('.program-card').forEach((card) => {
+          const shareBtn = card.querySelector('.program-share-btn');
+          const slug = card.getAttribute('data-slug');
+
+          card.addEventListener('click', (ev) => {
+            if (shareBtn && (ev.target === shareBtn || shareBtn.contains(ev.target))) {
+              return;
+            }
+            window.location.href = `program-guide-detail.html?slug=${encodeURIComponent(slug)}`;
+          });
+
+          if (shareBtn) {
+            shareBtn.addEventListener('click', async (ev) => {
+              ev.preventDefault();
+              ev.stopPropagation();
+
+              const title = (shareBtn.getAttribute('data-title') || '').trim();
+              let shareUrl = shareBtn.getAttribute('data-share-url') || '';
+              
+              shareUrl = getCleanShareUrl(shareUrl);
+              
+              let fullLink = window.location.origin.replace(/\/$/, '') + '/' + shareUrl.replace(/^\//, '');
+              fullLink = getCleanShareUrl(fullLink);
+
+              const text = `*യൂത്ത് മീറ്റിംഗുകൾക്കായി തയ്യാറെടുക്കാം! ✨*
+
+*നിങ്ങളുടെ മീറ്റിംഗുകളിൽ അവതരിപ്പിക്കാൻ വ്യത്യസ്തമായ ഒരു പ്രോഗ്രാം തിരയുകയാണോ? ജീവജ്യോതി മീഡിയ ഒരുക്കുന്ന ഈ പുതിയ പ്രോഗ്രാം പരിചയപ്പെടൂ:*
+
+*📌 Program: ${title}*
+
+*🔗 Link:* ${fullLink}
+
+*യൂത്ത് മീറ്റിംഗുകൾ കൂടുതൽ ആകർഷകമാക്കാൻ ആവശ്യമായ പുതിയ ഐഡിയകളും പ്രോഗ്രാമുകളും ഈ പേജിൽ ലഭ്യമാണ്.*
+
+*നമുക്ക് ഒന്നിച്ച് നല്ലൊരു നാളെയെ വാർത്തെടുക്കാം! 🤝*
+*🛑Jeevajyothi Media🛑*`;
+
+              try {
+                if (navigator.share) {
+                  await navigator.share({ title: title || 'Program', text: text });
+                } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                  await navigator.clipboard.writeText(text);
+                  alert('Share text copied to clipboard!');
+                } else {
+                  alert('Sharing is not supported in this browser.');
+                }
+              } catch (e) {
+                console.error('Card share failed:', e);
+              }
+            });
+          }
+        });
+      }
+
+      function renderDetailNow(program) {
+        const title = document.getElementById('programDetailTitle');
+        const lead = document.getElementById('programDetailLead');
+        const summary = document.getElementById('programDetailSummary');
+        const sectionsEl = document.getElementById('programDetailSections');
+
+        const verseWrap = document.getElementById('programDetailVerse');
+        const verseRef = document.getElementById('programDetailVerseRef');
+        const verseText = document.getElementById('programDetailVerseText');
+
+        const notFound = document.getElementById('programDetailNotFound');
+
+        if (!title || !lead || !summary || !sectionsEl) return;
+
+        if (!program) {
+          if (notFound) notFound.style.display = 'block';
+          return;
+        }
+
+        if (notFound) notFound.style.display = 'none';
+
+        title.textContent = program.title || 'Program';
+        lead.textContent = program.lead || '';
+        summary.textContent = program.summary || '';
+
+        if (verseWrap && program.verse && program.verseText) {
+          verseRef.textContent = program.verse;
+          verseText.textContent = program.verseText;
+          verseWrap.style.display = 'block';
+        } else if (verseWrap) {
+          verseWrap.style.display = 'none';
+        }
+
+        const sections = Array.isArray(program.sections) ? program.sections : [];
+        sectionsEl.innerHTML = sections
+          .map((s) => {
+            const items = Array.isArray(s.items) ? s.items : [];
+            return `
+              <section style="margin-bottom: 24px;">
+                <h2 style="margin:0 0 8px; font-size: 1.2rem;">${escapeHtml(s.title || '')}</h2>
+                <ul style="margin:0; padding-left:20px; color: rgba(255,255,255,0.9); line-height:1.7;">
+                  ${items.map((it) => `<li>${escapeHtml(it)}</li>`).join('')}
+                </ul>
+              </section>
+            `;
+          })
+          .join('');
+      }
+
+      async function renderDetail(slug) {
+        const programs = await loadPrograms();
+        const program = programs.find((p) => p.slug === slug);
+        renderDetailNow(program);
+      }
+
+      window.ProgramGuide = {
+        renderGrid,
+        renderDetail,
+      };
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const grid = document.getElementById('programGuideGrid');
+        if (grid) {
+          renderGrid();
+        }
+
+        const shareBtn = document.getElementById('programGuideShareBtn');
+        if (shareBtn) {
+          shareBtn.addEventListener('click', async function () {
+            try {
+              let link = window.location.origin + '/program-guide.html';
+              link = link.replace(/\.html$/, '');
+              link = link.replace(/\.html\?/, '?');
+              
+              const text = `*യൂത്ത് മീറ്റിംഗുകൾക്കായി തയ്യാറെടുക്കാം! ✨*
+
+*നിങ്ങളുടെ മീറ്റിംഗുകളിൽ അവതരിപ്പിക്കാൻ വ്യത്യസ്തമായ ഒരു പ്രോഗ്രാം തിരയുകയാണോ? ജീവജ്യോതി മീഡിയ ഒരുക്കുന്ന ഈ പുതിയ പ്രോഗ്രാം പരിചയപ്പെടൂ:*
+
+*📌 Program: [title]*
+
+*🔗 Link:* ${link}
+
+*യൂത്ത് മീറ്റിംഗുകൾ കൂടുതൽ ആകർഷകമാക്കാൻ ആവശ്യമായ പുതിയ ഐഡിയകളും പ്രോഗ്രാമുകളും ഈ പേജിൽ ലഭ്യമാണ്.*
+
+*നമുക്ക് ഒന്നിച്ച് നല്ലൊരു നാളെയെ വാർത്തെടുക്കാം! 🤝*
+*🛑Jeevajyothi Media🛑*`;
+
+              if (navigator.share) {
+                navigator.share({ title: 'Program Guide for Youth', text: text });
+              } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(text);
+                alert('Share text copied to clipboard!');
+              } else {
+                alert('Sharing is not supported in this browser.');
+              }
+            } catch (e) {
+              console.error('Program guide share failed:', e);
+            }
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <meta name="yandex" content="notranslate">
+  <link rel="icon" href="https://drive.google.com/thumbnail?id=1Lavb4TCE2QFKQ7ig1XlrX30KoLCjJYPp&sz=w1000">
+  <title>Voice Contributors - Jeevajyothi Media</title>
+  <meta name="description" content="Meet the voice contributors of Jeevajyothi Media - sharing Christian testimonies, devotionals and articles.">
+
+  <link rel="stylesheet" href="assets/css/styles.css?v=202605071811">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Michroma&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866754402147741" crossorigin="anonymous"></script>
+  
+  <style>
+    /* Hide image container when no photo */
+    .member-card-media.hidden {
+      display: none;
+    }
+    
+    /* Adjust card body padding when no image */
+    .member-card:has(.member-card-media.hidden) .member-card-body {
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body class="board-page">
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="https://drive.google.com/thumbnail?id=1jaEnOnm2O0w6882JCtHgYNJQ0HcXwzB7&sz=500" alt="Logo" class="brand-logo">
+        <span id="headerBrandName">Jeevajyothi Media</span>
+      </a>
+      <nav class="nav"></nav>
+    </div>
+  </header>
+
+  <section class="announcement-bar">
+    <div class="announcement-track"></div>
+  </section>
+
+  <main>
+    <section class="team-page-hero">
+      <div class="container">
+        <span class="team-page-kicker">Voice Hub Contributors</span>
+        <h1>Voice Hub Contributors of <span id="teamBrandName">Jeevajyothi Media</span></h1>
+      </div>
+      <div class="hero-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+        <a href="voice-hub-submit.html" class="btn btn-primary">Share Your Voice</a>
+        <a href="voice-hub.html" class="btn secondary">← Back to Voices</a>
+                <a href="board-members.html" class="btn secondary">Meet Board Members</a>
+
+      </div>
+    </section>
+
+    <section class="team-category">
+      <div class="container">
+        <div class="team-section-head">
+          <div>
+            <span class="team-section-label"></span>
+          </div>
+        </div>
+        <div id="voice-contributors-grid" class="team-members-grid">
+          <!-- Contributors will be loaded here dynamically -->
+          <div class="skeleton-card">
+            <div class="skeleton-image"></div>
+            <div class="skeleton-content">
+              <div class="skeleton-title" style="width:70%"></div>
+              <div class="skeleton-text" style="width:50%"></div>
+            </div>
+          </div>
+          <div class="skeleton-card">
+            <div class="skeleton-image"></div>
+            <div class="skeleton-content">
+              <div class="skeleton-title" style="width:70%"></div>
+              <div class="skeleton-text" style="width:50%"></div>
+            </div>
+          </div>
+          <div class="skeleton-card">
+            <div class="skeleton-image"></div>
+            <div class="skeleton-content">
+              <div class="skeleton-title" style="width:70%"></div>
+              <div class="skeleton-text" style="width:50%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span id="footerBrandName">Jeevajyothi Media</span> • <span id="footerText">Believe • Sing • Share</span></p>
+      <div class="social">
+        <a id="footerFacebook" href="https://www.facebook.com/jeevajyothigospelvoice" target="_blank" rel="noopener">
+          <img src="assets/images/facebook.png?v=202605071811" alt="Facebook">
+        </a>
+        <a id="footerInstagram" href="https://www.instagram.com/jeevajyothi_media" target="_blank" rel="noopener">
+          <img src="assets/images/instagram.png?v=202605071811" alt="Instagram">
+        </a>
+        <a id="footerYouTube" href="https://www.youtube.com/@jeevajyothimedia" target="_blank" rel="noopener">
+          <img src="assets/images/youtube.png?v=202605071811" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/load-navigators.js"></script>
+  
+  <script>
+    // Contributors data and initialization
+    const API_BASE = 'http://localhost:3000/api/public';
+    const PUBLIC_API_BASE = API_BASE;
+
+    const CONTRIBUTORS_CACHE = new Map();
+    
+    async function fetchContributorsData(cacheKey, url) {
+
+      if (CONTRIBUTORS_CACHE.has(cacheKey)) return CONTRIBUTORS_CACHE.get(cacheKey);
+      
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        CONTRIBUTORS_CACHE.set(cacheKey, data);
+        return data;
+      } catch (e) {
+        console.error('Error fetching contributors data:', e);
+        return [];
+      }
+    }
+
+    async function fetchVoicesData() {
+      try {
+        console.log('🔌 Fetching from:', `${PUBLIC_API_BASE}/voices`);
+        const r = await fetch(`${PUBLIC_API_BASE}/voices?t=${Date.now()}`);
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        const d = await r.json();
+        if (Array.isArray(d)) return d;
+        if (Array.isArray(d.data)) return d.data;
+        return [];
+      } catch (error) {
+        console.error('❌ API Error:', error);
+        return [];
+      }
+    }
+
+
+
+    function normalizeText(str) {
+      if (!str) return '';
+      return str.toString().toLowerCase().trim();
+    }
+
+    function toSlug(value) {
+      return String(value || '')
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9-]/g, '');
+    }
+
+    function isValidImageUrl(url) {
+      if (!url) return false;
+      // Check if URL is not empty and not a placeholder
+      const invalidPatterns = ['placeholder', 'default', 'no-image', 'null', 'undefined'];
+      const urlLower = url.toLowerCase();
+      return !invalidPatterns.some(pattern => urlLower.includes(pattern)) && 
+             (urlLower.startsWith('http') || urlLower.startsWith('https'));
+    }
+
+    async function loadVoiceContributorsList() {
+      const grid = document.getElementById('voice-contributors-grid');
+      if (!grid) return;
+      
+      try {
+        const [contributors, voices] = await Promise.all([
+          (async () => {
+            try {
+              console.log('🔌 Fetching from:', `${PUBLIC_API_BASE}/contributors`);
+              const r = await fetch(`${PUBLIC_API_BASE}/contributors?t=${Date.now()}`);
+              if (!r.ok) throw new Error(`HTTP ${r.status}`);
+              const d = await r.json();
+              return Array.isArray(d) ? d : (Array.isArray(d.data) ? d.data : []);
+            } catch (error) {
+              console.error('❌ API Error:', error);
+              return [];
+            }
+          })(),
+          fetchVoicesData()
+        ]);
+
+
+        
+      if (!contributors || contributors.length === 0) {
+          grid.innerHTML = '<p style="text-align:center;padding:2rem;">No contributors yet.</p>';
+          return;
+        }
+
+
+        const voiceList = Array.isArray(voices) ? voices : [];
+
+        function getContributorPostCount(contributor) {
+          const contributorSlug = toSlug(contributor.slug || contributor.name);
+          const contributorName = normalizeText(contributor.name);
+
+          return voiceList.filter((voice) => {
+            const voiceName = normalizeText(voice.authorName || voice.name);
+            const voiceSlug = toSlug(voiceName);
+            return voiceSlug === contributorSlug || voiceName === contributorName;
+          }).length;
+        }
+
+        function getContributorBio(contributor) {
+          return contributor.bio || `${contributor.name} is a contributor sharing Christian testimonies and devotionals.`;
+        }
+
+        // Create cards with full card clickable - NOT just the image
+        grid.innerHTML = '';
+        
+        contributors.forEach(m => {
+          const card = document.createElement('article');
+          card.className = 'member-card';
+          
+          // Add click event to the entire card
+          card.addEventListener('click', function() {
+            window.location.href = `voice-contributor.html?contributor=${m.slug}`;
+          });
+          
+          // Check if photo exists and is valid
+          const hasPhoto = isValidImageUrl(m.picture);
+          
+          // Build card HTML - conditionally include or hide the image section
+          const imageHtml = hasPhoto ? `
+            <div class="member-card-media">
+              <img class="member-card-photo" src="${escapeHtml(m.picture)}" alt="${escapeHtml(m.name)}" loading="lazy">
+            </div>
+          ` : '';
+          
+          card.innerHTML = `
+            ${imageHtml}
+            <div class="member-card-body">
+              <p class="member-card-role">${escapeHtml(m.designation || 'Contributor')}</p>
+              <h3 class="member-card-name">${escapeHtml(m.name)}</h3>
+              <p class="member-card-duty">📝 ${getContributorPostCount(m)} Posts</p>
+            </div>
+          `;
+          
+          // Add a class to the card body if no photo for potential styling
+          if (!hasPhoto) {
+            card.querySelector('.member-card-body')?.classList.add('no-photo');
+          }
+          
+          grid.appendChild(card);
+        });
+        
+      } catch (error) {
+        console.error('❌ API Error:', error);
+        grid.innerHTML = '<p class="error" style="text-align:center;padding:2rem;">Failed to load contributors (API error). Check console.</p>';
+      }
+
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Initialize
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      if (document.getElementById('voice-contributors-grid')) {
+        loadVoiceContributorsList();
+      }
+    });
+  </script>
+</body>
+</html>

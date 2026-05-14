@@ -1,0 +1,14 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Frontend server",
+  "main": "dev-server.cjs",
+  "scripts": {
+    "start": "node dev-server.cjs",
+    "cache:bust": "node scripts/cache-bust.cjs"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+

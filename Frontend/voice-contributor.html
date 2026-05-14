@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <meta name="yandex" content="notranslate">
+  <link rel="icon" href="https://drive.google.com/thumbnail?id=1jaEnOnm2O0w6882JCtHgYNJQ0HcXwzB7&sz=w500">
+  <title>Voice Hub Contributor Profile - Jeevajyothi Media</title>
+  <meta name="description" content="Voice Hub contributor profile with testimonies, devotionals and articles.">
+<link rel="stylesheet" href="assets/css/styles.css?v=202605071811">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Michroma&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866754402147741" crossorigin="anonymous"></script>
+  <style>
+    .contribution-page {
+      padding-bottom: 3rem;
+    }
+
+    .team-page-hero {
+      padding: 2rem 0;
+      background: linear-gradient(to bottom, rgba(255, 207, 110, 0.08) 0%, transparent 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .member-profile-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .member-avatar-container {
+      flex-shrink: 0;
+    }
+
+    .member-avatar {
+      width: 140px;
+      height: 175px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 3px solid rgba(255, 207, 110, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.04);
+      display: block;
+    }
+
+    .member-info-content {
+      flex: 1;
+      min-width: 0;
+      text-align: left;
+      overflow: visible;
+    }
+
+    #memberNameHeading {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      white-space: normal;
+      max-width: 100%;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .member-profile-header {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+      }
+      .member-info-content {
+        text-align: center;
+        width: 100%;
+      }
+      #memberNameHeading {
+        font-size: 1.3rem;
+      }
+      .member-avatar {
+        width: 110px;
+        height: 138px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #memberNameHeading {
+        font-size: 1.1rem;
+      }
+      .member-avatar {
+        width: 95px;
+        height: 119px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-page-hero {
+        padding: 1.2rem 0;
+      }
+      #memberNameHeading {
+        font-size: 0.95rem;
+      }
+      .member-avatar {
+        width: 85px;
+        height: 106px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      #memberNameHeading {
+        font-size: 0.85rem;
+      }
+      .member-avatar {
+        width: 75px;
+        height: 94px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      #memberNameHeading {
+        font-size: 0.75rem;
+      }
+      .member-avatar {
+        width: 65px;
+        height: 81px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      #memberNameHeading {
+        font-size: 2rem;
+      }
+      .member-avatar {
+        width: 150px;
+        height: 188px;
+      }
+    }
+
+    .contribution-summary p {
+      max-width: 700px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .contribution-summary p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.8rem;
+      }
+    }
+
+    .contribution-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .contribution-stats {
+        justify-content: center;
+      }
+    }
+
+    .stat-badge {
+      background: rgba(255, 207, 110, 0.1);
+      border: 1px solid rgba(255, 207, 110, 0.2);
+      border-radius: 30px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.7rem;
+      color: #ffcf6e;
+    }
+
+    .contribution-actions {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .contribution-actions {
+        justify-content: center;
+      }
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.14);
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.75rem;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .contribution-type-section {
+      margin-top: 2rem;
+    }
+
+    .contribution-type-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      border-left: 3px solid #ffcf6e;
+      padding-left: 0.8rem;
+    }
+
+    .contribution-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .contribution-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .contribution-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+    }
+
+    .contribution-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 207, 110, 0.4);
+      transform: translateX(5px);
+    }
+
+    .contribution-type-badge span {
+      font-size: 0.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #ffcf6e;
+      background: rgba(255, 207, 110, 0.1);
+      padding: 0.25rem 0.6rem;
+      border-radius: 30px;
+      white-space: nowrap;
+    }
+
+    .contribution-content {
+      flex: 1;
+    }
+
+    .contribution-title {
+      margin: 0 0 0.2rem;
+      font-size: 0.9rem;
+    }
+
+    .contribution-title a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .contribution-title a:hover {
+      color: #ffcf6e;
+    }
+
+    .contribution-date {
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.5);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .contribution-excerpt {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .contribution-empty {
+      padding: 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .whatsapp-community .btn {
+      transition: all 0.3s ease;
+      padding: 0.5rem 1.2rem !important;
+      font-size: 0.8rem !important;
+    }
+
+    .hero-buttons a,
+    .contribution-actions a {
+      background: #fffdff !important;
+      color: #1e2a4a !important;
+      font-weight: bold !important;
+      border: none !important;
+      padding: 0.6rem 1.5rem !important;
+      font-size: 0.9rem !important;
+      border-radius: 8px !important;
+      text-decoration: none !important;
+      display: inline-block !important;
+    }
+
+    .hero-buttons a:hover,
+    .contribution-actions a:hover {
+      background: #f4dda0 !important;
+      transform: translateY(-2px) !important;
+    }
+
+    .whatsapp-community a.btn {
+      background: #25D366 !important;
+      color: white !important;
+    }
+
+    @media (max-width: 768px) {
+      .hero-buttons a,
+      .contribution-actions a {
+        padding: 0.5rem 1.2rem !important;
+        font-size: 0.85rem !important;
+      }
+    }
+  </style>
+</head>
+<body class="board-page">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="https://drive.google.com/thumbnail?id=1jaEnOnm2O0w6882JCtHgYNJQ0HcXwzB7&sz=500" alt="Jeevajyothi Media Logo" class="brand-logo">
+        <span id="headerBrandName">Jeevajyothi Media</span>
+      </a>
+      <nav class="nav"></nav>
+    </div>
+  </header>
+
+  <div class="announcement-bar"><div class="announcement-track"></div></div>
+  
+  
+  <main class="team-page contribution-page">
+    <section class="team-page-hero">
+      <div class="container">
+        <span class="team-page-kicker">Voice Hub Contributor</span>
+        
+        <div class="member-profile-header">
+          <div class="member-avatar-container">
+            <img id="memberAvatar" class="member-avatar" src="assets/images/placeholder.svg?v=202605071811" alt="Contributor photo">
+          </div>
+
+          <div class="member-info-content">
+            <h1 id="memberNameHeading">Loading profile...</h1>
+            <div class="contribution-summary">
+              <p id="memberSummary">Loading contributions...</p>
+              <div class="contribution-stats" id="contributionStats"></div>
+              <div class="contribution-actions">
+                <a class="btn secondary" href="voice-contributors.html">← Back to Contributors</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="whatsapp-community" style="margin: 0.8rem 0; text-align: center;">
+          <a href="https://www.whatsapp.com/channel/0029Va9LliuJZg4A3wN3aN2g" class="btn primary" target="_blank">📢 Join Our WhatsApp Channel!</a>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="voice-hub-submit.html" class="btn btn-primary">Share Your Voice</a>
+          <a href="voice-hub.html" class="btn secondary">← Back to Voices</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-category">
+      <div class="container">
+        <div id="allContributionsSection" class="contribution-type-section">
+          <h2>Voices by <span id="contributorNameSpan"></span></h2>
+          <div id="allGrid" class="contribution-list">
+            <div class="contribution-empty">Loading contributions...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span id="footerBrandName">Jeevajyothi Media</span> • <span id="footerText">Believe • Sing • Share</span></p>
+      <div class="social">
+        <a id="footerFacebook" href="https://www.facebook.com/jeevajyothigospelvoice" target="_blank" rel="noopener">
+          <img src="assets/images/facebook.png?v=202605071811" alt="Facebook">
+        </a>
+        <a id="footerInstagram" href="https://www.instagram.com/jeevajyothi_media" target="_blank" rel="noopener">
+          <img src="assets/images/instagram.png?v=202605071811" alt="Instagram">
+        </a>
+        <a id="footerYouTube" href="https://www.youtube.com/@jeevajyothimedia" target="_blank" rel="noopener">
+          <img src="assets/images/youtube.png?v=202605071811" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/load-navigators.js"></script>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const contributorSlug = urlParams.get('contributor');
+    
+    // Helper function to get display label - prioritizes cardLabel over type
+    function getDisplayLabel(voice) {
+      if (voice.cardLabel && voice.cardLabel.trim() !== '') {
+        return voice.cardLabel;
+      }
+      if (voice.type && voice.type.trim() !== '') {
+        return voice.type.charAt(0).toUpperCase() + voice.type.slice(1);
+      }
+      return 'Voice';
+    }
+    
+    // Helper function to parse date safely
+    function parseDate(dateString) {
+      if (!dateString) return new Date(0);
+      const date = new Date(dateString);
+      return isNaN(date.getTime()) ? new Date(0) : date;
+    }
+    
+    async function loadContributorDetail() {
+      if (!contributorSlug) {
+        document.getElementById('memberNameHeading').textContent = 'Contributor not found';
+        document.getElementById('allGrid').innerHTML = '<div class="contribution-empty">No contributor specified.</div>';
+        return;
+      }
+      
+      try {
+        const API_BASE = 'http://localhost:3000/api/public';
+        const [contributorsResponse, voicesResponse] = await Promise.all([
+          fetch(`${API_BASE}/contributors?t=${Date.now()}`),
+          fetch(`${API_BASE}/voices?t=${Date.now()}`)
+        ]);
+
+        
+        const contributorsJson = await contributorsResponse.json();
+        const voicesJson = await voicesResponse.json();
+        const contributors = Array.isArray(contributorsJson) ? contributorsJson : (Array.isArray(contributorsJson.data) ? contributorsJson.data : []);
+        const voices = Array.isArray(voicesJson) ? voicesJson : (Array.isArray(voicesJson.data) ? voicesJson.data : []);
+
+        
+        const contributor = contributors.find(c => c.slug === contributorSlug) || contributors.find(c => c.id === contributorSlug) || null;
+
+        
+        if (!contributor) {
+          document.getElementById('memberNameHeading').textContent = 'Contributor not found';
+          document.getElementById('allGrid').innerHTML = '<div class="contribution-empty">Contributor not found.</div>';
+          return;
+        }
+        
+        // Filter voices by matching author name
+        const contributorVoices = voices.filter(voice => {
+          const voiceAuthor = (voice.authorName || voice.name || '').toLowerCase().trim();
+          const contributorName = (contributor.name || '').toLowerCase().trim();
+          return voiceAuthor === contributorName;
+        });
+        
+        // Sort voices by date (newest first)
+        contributorVoices.sort((a, b) => {
+          const dateA = parseDate(a.date || a.displayDate);
+          const dateB = parseDate(b.date || b.displayDate);
+          return dateB - dateA;
+        });
+        
+        document.getElementById('memberNameHeading').textContent = contributor.name;
+        document.getElementById('contributorNameSpan').textContent = contributor.name;
+        
+        const avatarImg = document.getElementById('memberAvatar');
+        if (avatarImg && contributor.picture) {
+          avatarImg.src = contributor.picture;
+          avatarImg.alt = contributor.name;
+        }
+        
+        const summaryElem = document.getElementById('memberSummary');
+        if (summaryElem) {
+          summaryElem.innerHTML = contributor.bio || `${contributor.name} is a contributor sharing Christian testimonies, devotionals, and articles.`;
+        }
+        
+        // Calculate stats based on cardLabel or type
+        const statsElem = document.getElementById('contributionStats');
+        if (statsElem) {
+          const editorialCount = contributorVoices.filter(v => {
+            const label = getDisplayLabel(v).toLowerCase();
+            return label === 'editorial' || v.type === 'editorial';
+          }).length;
+          
+          const testimonyCount = contributorVoices.filter(v => {
+            const label = getDisplayLabel(v).toLowerCase();
+            return label === 'testimony' || label === 'testimonies' || v.type === 'testimony';
+          }).length;
+          
+          const devotionalCount = contributorVoices.filter(v => {
+            const label = getDisplayLabel(v).toLowerCase();
+            return label === 'devotional' || label === 'devotionals' || v.type === 'devotional';
+          }).length;
+          
+          statsElem.innerHTML = `
+            <span class="stat-badge">📖 ${contributorVoices.length} Total Posts</span>
+            ${editorialCount > 0 ? `<span class="stat-badge">✍️ ${editorialCount} Editorials</span>` : ''}
+            ${testimonyCount > 0 ? `<span class="stat-badge">🎙️ ${testimonyCount} Testimonies</span>` : ''}
+            ${devotionalCount > 0 ? `<span class="stat-badge">🙏 ${devotionalCount} Devotionals</span>` : ''}
+          `;
+        }
+        
+        const grid = document.getElementById('allGrid');
+        if (contributorVoices.length === 0) {
+          grid.innerHTML = '<div class="contribution-empty">No contributions yet from this contributor.</div>';
+        } else {
+          grid.innerHTML = contributorVoices.map(voice => {
+            const displayLabel = getDisplayLabel(voice);
+            // Format the date for display
+            let formattedDate = '';
+            if (voice.displayDate) {
+              formattedDate = voice.displayDate;
+            } else if (voice.date) {
+              const date = new Date(voice.date);
+              if (!isNaN(date.getTime())) {
+                formattedDate = date.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'short',
+                  year: 'numeric'
+                });
+              }
+            }
+            
+            return `
+              <div class="contribution-item" onclick="window.location.href='voice-article.html?id=${voice.id}'">
+                <div class="contribution-type-badge">
+                  <span>${escapeHtml(displayLabel)}</span>
+                </div>
+                <div class="contribution-content">
+                  <span class="contribution-date">${escapeHtml(formattedDate)}</span>
+                  <h3 class="contribution-title">
+                    <a href="voice-article.html?id=${voice.id}">${escapeHtml(voice.title || 'Untitled')}</a>
+                  </h3>
+                  ${voice.excerpt ? `<p class="contribution-excerpt">${escapeHtml(voice.excerpt.substring(0, 100))}${voice.excerpt.length > 100 ? '...' : ''}</p>` : ''}
+                </div>
+                <div class="contribution-arrow">→</div>
+              </div>
+            `;
+          }).join('');
+        }
+        
+        handleLongName();
+        
+      } catch (error) {
+        console.error('Error loading contributor detail:', error);
+        document.getElementById('memberNameHeading').textContent = 'Error loading profile';
+        document.getElementById('allGrid').innerHTML = '<div class="contribution-empty">Error loading contributions. Please try again later.</div>';
+      }
+    }
+    
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    function handleLongName() {
+      const heading = document.getElementById('memberNameHeading');
+      if (!heading) return;
+      const originalText = heading.textContent;
+      if (originalText && originalText !== 'Loading profile...' && originalText !== 'Contributor not found' && originalText !== 'Error loading profile') {
+        if (originalText.length > 25) {
+          heading.setAttribute('data-long', 'true');
+        }
+        if (originalText.length > 40) {
+          heading.setAttribute('title', originalText);
+        }
+      }
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadContributorDetail);
+    } else {
+      loadContributorDetail();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Redirects for clean URLs
+[[redirects]]
+  from = "/news/*"
+  to = "/news-article"
+  query = { slug = ":splat" }
+  status = 200
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

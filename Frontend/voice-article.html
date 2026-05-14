@@ -1,0 +1,1097 @@
+﻿<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" content="notranslate">
+  <meta name="yandex" content="notranslate">
+  <link rel="icon" href="https://drive.google.com/thumbnail?id=1Lavb4TCE2QFKQ7ig1XlrX30KoLCjJYPp&sz=w1000">
+  <title>Voice Article — Jeevajyothi Media</title>
+  <meta name="description" content="Full voice article from Jeevajyothi Media.">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="">
+  <link rel="stylesheet" href="assets/css/styles.css?v=202605071811">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2866754402147741" crossorigin="anonymous"></script>
+  <script>
+    var CACHE_BUST = Date.now();
+    function appendCacheBust(url) {
+      if (!url || typeof url !== 'string' || url.includes('?')) return url;
+      if (/^(?:\.\/|\/)?assets\//.test(url)) return url + '?v=' + CACHE_BUST;
+      return url;
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Michroma&display=swap" rel="stylesheet">
+  <style>
+     :root {
+      --accent-primary: #6366f1;
+      --accent-secondary: #a855f7;
+      --text-main: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Article Container & Float Logic */
+    .article-with-float-image {
+      overflow: hidden;
+      width: 100%;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      padding: 0;
+    }
+
+    /* Responsive Floating Inner Image - Clickable */
+    .float-inner-image {
+      float: left;
+      width: 35%;
+      max-width: 280px;
+      min-width: 150px;
+      margin: 0 25px 15px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      line-height: 0;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .float-inner-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .float-inner-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .float-inner-image-caption {
+      padding: 8px 12px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      line-height: 1.4;
+      margin-top: 0;
+      pointer-events: none;
+    }
+
+    /* Inner Image Modal/Lightbox */
+    .image-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+ backdrop-filter: blur(15px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .image-modal.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .image-modal-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      position: relative;
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .image-modal-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .image-modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .image-modal-close:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: rotate(90deg);
+    }
+
+    .image-modal-caption {
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .image-modal-close {
+        top: -35px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+      }
+      .image-modal-caption {
+        bottom: -35px;
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-modal-close {
+        top: -30px;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+      }
+      .image-modal-caption {
+        bottom: -30px;
+        font-size: 0.7rem;
+      }
+    }
+
+    /* Tablet Landscape (1024px - 768px) */
+    @media (max-width: 1024px) {
+      .float-inner-image {
+        width: 40%;
+        max-width: 260px;
+        min-width: 140px;
+        margin: 0 20px 12px 0;
+      }
+      .float-inner-image-caption {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+      }
+    }
+
+    /* Tablet Portrait (768px - 640px) */
+    @media (max-width: 768px) {
+      .float-inner-image {
+        width: 45%;
+        max-width: 240px;
+        min-width: 130px;
+        margin: 0 18px 12px 0;
+      }
+      .float-inner-image-caption {
+        font-size: 0.65rem;
+        padding: 6px 8px;
+      }
+    }
+
+    /* Mobile Large (640px - 480px) */
+    @media (max-width: 640px) {
+      .float-inner-image {
+        width: 40%;
+        max-width: 200px;
+        min-width: 120px;
+        margin: 0 15px 10px 0;
+      }
+      .float-inner-image-caption {
+        font-size: 0.6rem;
+        padding: 5px 8px;
+      }
+    }
+
+    /* Mobile Medium (480px - 380px) */
+    @media (max-width: 480px) {
+      .float-inner-image {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        margin: 0 0 20px 0;
+      }
+      .float-inner-image img {
+        max-height: 350px;
+        object-fit: contain;
+      }
+      .float-inner-image-caption {
+        font-size: 0.7rem;
+        padding: 8px 12px;
+      }
+    }
+
+    /* Mobile Small (380px and below) */
+    @media (max-width: 380px) {
+      .float-inner-image img {
+        max-height: 280px;
+      }
+      .float-inner-image-caption {
+        font-size: 0.65rem;
+        padding: 6px 10px;
+      }
+    }
+
+    /* Large Desktop (1200px and above) */
+    @media (min-width: 1200px) {
+      .float-inner-image {
+        width: 30%;
+        max-width: 320px;
+        min-width: 180px;
+        margin: 0 30px 20px 0;
+      }
+    }
+
+    /* Typography for the Article View */
+    .article-header {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.3;
+      color: var(--text-main);
+    }
+
+    @media (max-width: 768px) {
+      .article-header {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .article-header {
+        font-size: 1.4rem;
+      }
+    }
+
+    .article-meta {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .article-meta-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .article-details {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .article-date, .article-type {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      align-items: center;
+    }
+
+    @media (max-width: 480px) {
+      .article-date, .article-type {
+        font-size: 0.75rem;
+      }
+      .article-details {
+        gap: 10px;
+      }
+    }
+
+    .article-content {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .article-content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #d1d1d1;
+      margin-bottom: 25px;
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .article-content p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .article-content p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin-bottom: 18px;
+      }
+    }
+    
+    /* Gallery Styles */
+    .article-gallery h3 {
+      margin-bottom: 20px;
+      color: var(--text);
+      font-size: 1.4em;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .article-gallery {
+      margin-top: 40px;
+      padding: 0;
+      border-top: none;
+      clear: both;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.5s ease;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .gallery-item {
+      position: relative;
+      cursor: pointer;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      aspect-ratio: 1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+    }
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(99, 102, 241, 0.25);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+      }
+    }
+    
+    .gallery-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.92) 0%, rgba(10, 10, 20, 0.95) 100%);
+      backdrop-filter: blur(12px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      animation: fadeInBackdrop 0.3s ease;
+    }
+    .gallery-modal.active {
+      display: flex;
+    }
+    @keyframes fadeInBackdrop {
+      from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+      }
+      to {
+        opacity: 1;
+        backdrop-filter: blur(12px);
+      }
+    }
+    .gallery-modal-content {
+      position: relative;
+      max-width: 100vw;
+      max-height: 100vh;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      animation: slideInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      background: rgba(20, 20, 20, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+    }
+    @keyframes slideInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+    .gallery-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background: rgba(20, 20, 20, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .gallery-modal-header h3 {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-right: 10px;
+    }
+    .gallery-close {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .gallery-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: rotate(90deg);
+    }
+    .gallery-modal-media {
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+      padding: 10px;
+      margin: 10px 0;
+      min-height: 0;
+    }
+    .gallery-modal-media img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      animation: imageSlideIn 0.4s ease;
+    }
+    @keyframes imageSlideIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .gallery-modal-media iframe,
+    .gallery-modal-media video {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      max-height: 100%;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+    .gallery-modal-footer {
+      padding: 24px 30px;
+      background: rgba(20, 20, 20, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .gallery-counter {
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 15px;
+      letter-spacing: 0.3px;
+    }
+    .gallery-nav {
+      display: flex;
+      gap: 12px;
+    }
+    .gallery-nav-btn {
+      padding: 10px 16px;
+      background: var(--accent-primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .gallery-nav-btn:hover {
+      background: var(--accent-secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+    .gallery-nav-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    @media (max-width: 768px) {
+      .gallery-modal-content {
+        max-width: 95vw;
+        max-height: 95vh;
+      }
+      .gallery-modal-header {
+        padding: 16px 20px;
+      }
+      .gallery-modal-media {
+        padding: 8px;
+      }
+      .gallery-modal-footer {
+        padding: 16px 20px;
+      }
+      .gallery-nav-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+      .gallery-counter {
+        font-size: 14px;
+      }
+      .gallery-close {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery-modal-content {
+        max-height: 82vh;
+      }
+      .gallery-modal-header {
+        padding: 12px 16px;
+      }
+      .gallery-modal-media {
+        padding: 5px;
+      }
+      .gallery-modal-footer {
+        padding: 12px 16px;
+      }
+      .gallery-nav {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .gallery-nav-btn {
+        width: 100%;
+        padding: 10px;
+      }
+      .gallery-close {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+      }
+    }
+
+    /* Article Actions */
+    .article-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    
+    }
+  </style>
+</head>
+<body>
+  <!-- Left Sidebar Ad 2 -->
+  <div class="sidebar-ad left-ad ad-editable" style="top: 78.75%;">
+    <a id="leftAdLink2" href="tel:+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="leftAdImage2" src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+      <p id="leftAdText2" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+
+  <!-- Right Sidebar Ad 2 -->
+  <div class="sidebar-ad right-ad ad-editable" style="top: 78.75%;">
+    <a id="rightAdLink2" href="https://wa.me/+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="rightAdImage2" src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+      <p id="rightAdText2" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+
+  <!-- Left Sidebar Ad -->
+  <div class="sidebar-ad left-ad ad-editable" style="top: 257px;">
+    <a id="leftAdLink" href="tel:+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="leftAdImage" src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+      <p id="leftAdText" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+
+  <!-- Right Sidebar Ad -->
+  <div class="sidebar-ad right-ad ad-editable" style="top: 257px;">
+    <a id="rightAdLink" href="https://wa.me/+918078864233" class="ad-banner vertical" style="text-decoration:none;color:inherit;">
+      <img id="rightAdImage" src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+      <p id="rightAdText" style="display:none;">Ad Space</p>
+    </a>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="assets/images/placeholder.svg?v=202605071811" alt="Jeevajyothi Media Logo" class="brand-logo">
+        <span id="headerBrandName">Jeevajyothi Media</span>
+      </a>
+      <nav class="nav"><!-- Dynamic --></nav>
+    </div>
+  </header>
+
+  <div class="announcement-bar"><div class="announcement-track"></div></div>
+
+  <main>
+    <div class="container">
+      <article class="article-page">
+        <h1 id="articleTitle">Loading...</h1>
+        <div class="whatsapp-community" style="margin: 1rem 0; text-align: center;">
+          <a href="https://www.whatsapp.com/channel/0029Va9LliuJZg4A3wN3aN2g" class="btn primary" target="_blank" style="background: #25D366; border-color: #25D366; font-weight: 600; padding: 0.6rem 1.5rem; font-size: 0.9rem; display: inline-block; text-decoration: none; border-radius: 8px; color: white;">📢 Join Our WhatsApp Channel for Latest Updates!</a>
+        </div>
+
+        <!-- Center Aligned Hero Buttons -->
+        <div class="hero-buttons">
+          <a href="voice-hub-submit.html" class="btn btn-primary">Share Your Voice</a>
+          <a href="voice-contributors.html" class="btn btn-secondary">Meet Contributors</a>
+        </div>
+        
+        <div class="article-meta" id="articleMeta">Loading...</div>
+        
+        <!-- Article Content with Floating Inner Image -->
+        <div class="article-with-float-image" id="articleContentWrapper">
+          <div id="articleContent" class="article-content">Loading...</div>
+        </div>
+        
+        <!-- Gallery Section -->
+        <div class="article-gallery" id="articleGallerySection" style="display:none;">
+          <h3>📸 Gallery</h3>
+          <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+        
+        <div class="article-actions">
+          <a href="voice-hub.html" class="btn secondary">← Back to Voices</a>
+          <button id="shareBtn" class="btn primary" type="button">Share</button>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Inner Image Modal/Lightbox -->
+  <div id="innerImageModal" class="image-modal">
+    <div class="image-modal-content">
+      <button class="image-modal-close" id="closeImageModal">&times;</button>
+      <img id="modalInnerImage" src="" alt="">
+      <div id="modalInnerImageCaption" class="image-modal-caption"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Ads -->
+  <div class="mobile-ads">
+    <div class="container">
+      <div class="grid two">
+        <a href="tel:+918078864233" class="ad-banner horizontal">
+          <img src="assets/images/ad-contact.jpg?v=202605071811" alt="Call Us">
+        </a>
+        <a href="https://wa.me/+918078864233" class="ad-banner horizontal">
+          <img src="assets/images/ad-contact-2.jpg?v=202605071811" alt="WhatsApp">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span id="footerBrandName">Jeevajyothi Media</span> • <span id="footerText">Believe • Sing • Share</span></p>
+      <div class="social">
+        <a id="footerFacebook" href="https://www.facebook.com/jeevajyothigospelvoice" target="_blank" rel="noopener">
+          <img src="assets/images/facebook.png?v=202605071811" alt="Facebook">
+        </a>
+        <a id="footerInstagram" href="https://www.instagram.com/jeevajyothi_media" target="_blank" rel="noopener">
+          <img src="assets/images/instagram.png?v=202605071811" alt="Instagram">
+        </a>
+        <a id="footerYouTube" href="https://www.youtube.com/@jeevajyothimedia" target="_blank" rel="noopener">
+          <img src="assets/images/youtube.png?v=202605071811" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/content-protection.js" defer></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/load-navigators.js"></script>
+  <script src="assets/js/load-core-team.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Update brand name and social links
+    (function() {
+      const LS_KEY = 'site.data.v1';
+      function readSiteData() {
+        try { const raw = localStorage.getItem(LS_KEY); return raw ? JSON.parse(raw) : null; } catch (_) { return null; }
+      }
+      const site = readSiteData();
+      if (site && site.other) {
+        const headerBrandName = document.getElementById('headerBrandName');
+        const footerBrandName = document.getElementById('footerBrandName');
+        const footerText = document.getElementById('footerText');
+        if (headerBrandName && site.other.brandName) headerBrandName.textContent = site.other.brandName;
+        if (footerBrandName && site.other.brandName) footerBrandName.textContent = site.other.brandName;
+        if (footerText && site.other.footerText) footerText.textContent = site.other.footerText;
+        const footerFacebook = document.getElementById('footerFacebook');
+        const footerInstagram = document.getElementById('footerInstagram');
+        const footerYouTube = document.getElementById('footerYouTube');
+        if (footerFacebook && site.other.facebookLink) footerFacebook.href = site.other.facebookLink;
+        if (footerInstagram && site.other.instagramLink) footerInstagram.href = site.other.instagramLink;
+        if (footerYouTube && site.other.youtubeLink) footerYouTube.href = site.other.youtubeLink;
+      }
+    })();
+
+    function normalizeText(value) {
+      return String(value || '')
+        .replace(/[^\w\s.-]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase();
+    }
+
+    function isBoardMemberName(authorName, team) {
+      if (!authorName || !Array.isArray(team)) return false;
+      const normalizedAuthor = normalizeText(authorName);
+      return team.some(member => {
+        const normalizedMemberName = normalizeText(member.name || member.fullName || '');
+        return normalizedMemberName === normalizedAuthor ||
+               normalizedMemberName.includes(normalizedAuthor) ||
+               normalizedAuthor.includes(normalizedMemberName);
+      });
+    }
+
+    function findTeamMemberByName(authorName, team) {
+      if (!authorName || !Array.isArray(team)) return null;
+      const normalizedAuthor = normalizeText(authorName);
+      return team.find(member => {
+        const normalizedMemberName = normalizeText(member.name || member.fullName || '');
+        return normalizedMemberName === normalizedAuthor ||
+               normalizedMemberName.includes(normalizedAuthor) ||
+               normalizedAuthor.includes(normalizedMemberName);
+      }) || null;
+    }
+
+    async function loadVoiceArticle() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        
+        if (!id) {
+          document.getElementById('articleContent').innerHTML = '<p style="text-align:center;color:var(--muted);">No voice article found. Please select from the voice hub.</p>';
+          return;
+        }
+        
+        let voices = [];
+        let teamMembers = [];
+          const API_BASE = 'http://localhost:3000/api/public';
+          const [siteResponse, teamResponse] = await Promise.all([
+          fetch(`${API_BASE}/voice/${encodeURIComponent(id)}?t=${Date.now()}`).catch(() => null),
+          fetch(`${API_BASE}/board-members`).catch(() => null)
+        ]);
+
+
+        if (siteResponse && siteResponse.ok) {
+          const site = await siteResponse.json();
+          voices = site.voices || [];
+        }
+
+        if (teamResponse && teamResponse.ok) {
+          const teamData = await teamResponse.json();
+          teamMembers = Array.isArray(teamData) ? teamData : [];
+        }
+
+        let voice = null;
+        if (siteResponse && siteResponse.ok) {
+          const v = await siteResponse.json();
+          voice = v && v.data ? (Array.isArray(v.data) ? v.data[0] : v.data) : (v && v.id ? v : null);
+        }
+
+        
+        if (!voice) {
+          document.getElementById('articleContent').innerHTML = '<p style="text-align:center;color:var(--muted);">Voice article not found.</p>';
+          return;
+        }
+
+        
+        // Update page title and meta
+        document.title = voice.title + ' — Voice Hub';
+        
+        document.getElementById('articleTitle').textContent = voice.title;
+
+        const authorName = voice.authorName || '';
+        const matchedTeamMember = findTeamMemberByName(authorName, teamMembers);
+        const authorImage = appendCacheBust(voice.authorImage || matchedTeamMember?.image || '');
+        const authorIsBoardMember = authorName && isBoardMemberName(authorName, teamMembers);
+
+        const isAuthorDetailType = true;
+        
+        // Helper to create the slug
+        const authorSlug = encodeURIComponent(
+          authorName.toLowerCase().trim().replace(/\s+/g, '-')
+        );
+
+        // Determine the correct link based on the user type
+        const contributorLink = authorIsBoardMember
+          ? `board-member.html?member=${authorSlug}`
+          : `voice-contributor.html?contributor=${authorSlug}`;
+
+        const authorPanelStart = (authorName && isAuthorDetailType)
+          ? `<a class="speech-author-panel speech-author-panel-link" href="${contributorLink}" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding:1rem 1.1rem;border:1px solid var(--border-color);border-radius:14px;background:rgba(255,255,255,0.03);text-decoration:none;color:inherit;transition:all 0.3s ease;">`
+          : '';
+
+        const authorPanelEnd = (authorName && isAuthorDetailType) ? '</a>' : '';
+        const authorMarkup = authorName ? `<span class="speech-author-name" style="font-weight:700; color:var(--accent-primary);">${authorName}</span>` : '';
+
+        // Update meta section with author image
+        const metaContainer = document.querySelector('.article-meta');
+        metaContainer.innerHTML = `
+          ${authorName ? `${authorPanelStart}${authorImage ? `<img src="${authorImage}" alt="${authorName}" style="width:88px;height:112px;object-fit:cover;border-radius:10px;border:2px solid rgba(255,255,255,0.2);">` : ''}
+            <div>
+              <span class="speech-author-label">Author </span>
+              ${authorMarkup}
+            </div>
+          ${authorPanelEnd}` : ''}
+          <div class="article-meta-content">
+            <div class="article-details">
+              <span class="article-date">📅 ${voice.displayDate || voice.date}</span>
+              <span class="article-type">🎙️ ${voice.cardLabel || voice.type || 'Voice'}</span>
+            </div>
+          </div>
+        `;
+
+        // Prepare content HTML
+        let contentHtml = '';
+        if (voice.contentHtml) {
+          contentHtml = voice.contentHtml;
+        } else if (voice.content) {
+          contentHtml = voice.content;
+        }
+        
+        // Highlight brand name in content
+        contentHtml = contentHtml.replace(/Jeevajyothi Media/g, '<span class="brand-highlight">$&</span>');
+        
+        // Handle Inner Image - Clickable to open popup
+        const innerImage = voice.innerImage || voice.coverImage || '';
+        const innerImageCaption = voice.innerImageCaption || voice.imageCaption || '';
+        
+        if (innerImage && innerImage.trim() !== '') {
+          const floatingImageHtml = `
+            <div class="float-inner-image" data-image-src="${appendCacheBust(innerImage)}" data-image-caption="${escapeHtml(innerImageCaption)}">
+              <img src="${appendCacheBust(innerImage)}" alt="${escapeHtml(voice.title || 'Article image')}" loading="eager">
+              ${innerImageCaption ? `<div class="float-inner-image-caption">${escapeHtml(innerImageCaption)}</div>` : ''}
+            </div>
+          `;
+          contentHtml = floatingImageHtml + contentHtml;
+        }
+        
+        // Set the content
+        document.getElementById('articleContent').innerHTML = contentHtml || '<p>No content available.</p>';
+        
+        // Add click event listeners to inner images for popup
+        const innerImageContainers = document.querySelectorAll('.float-inner-image');
+        const imageModal = document.getElementById('innerImageModal');
+        const modalImg = document.getElementById('modalInnerImage');
+        const modalCaption = document.getElementById('modalInnerImageCaption');
+        const closeModal = document.getElementById('closeImageModal');
+        
+        innerImageContainers.forEach(container => {
+          container.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const imgSrc = this.getAttribute('data-image-src') || this.querySelector('img')?.src;
+            const imgCaption = this.getAttribute('data-image-caption') || this.querySelector('.float-inner-image-caption')?.textContent || '';
+            
+            if (imgSrc) {
+              modalImg.src = imgSrc;
+              modalCaption.textContent = imgCaption;
+              imageModal.classList.add('active');
+              document.body.style.overflow = 'hidden';
+            }
+          });
+        });
+        
+        // Close modal when clicking on the modal background or close button
+        if (closeModal) {
+          closeModal.addEventListener('click', function() {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        }
+        
+        imageModal.addEventListener('click', function(e) {
+          if (e.target === imageModal) {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+
+        // Share button
+        const shareBtn = document.getElementById('shareBtn');
+        if (shareBtn) {
+          const newShareBtn = shareBtn.cloneNode(true);
+          shareBtn.parentNode.replaceChild(newShareBtn, shareBtn);
+          
+          newShareBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const articleUrlObj = new URL(window.location.href);
+            articleUrlObj.pathname = articleUrlObj.pathname.replace(/\.html$/i, '');
+            const url = articleUrlObj.href;
+            const brandName = document.getElementById('headerBrandName') ? document.getElementById('headerBrandName').textContent : 'Jeevajyothi Media';
+            const submitUrlObj = new URL('voice-hub-submit.html', window.location.origin);
+            submitUrlObj.pathname = submitUrlObj.pathname.replace(/\.html$/i, '');
+            const submitUrl = submitUrlObj.href;
+            const fullText = `🛑*${voice.title || 'Voice'}*
+📝*${authorName || 'Unknown'}*
+🔗 ${url}
+
+*നിങ്ങളുടെ ചിന്തകളും ലോകമറിയട്ടെ! ✍️*
+
+*ജീവജ്യോതി മീഡിയയിലൂടെ നിങ്ങളുടെ ലേഖനങ്ങളും സന്ദേശങ്ങളും സമൂഹത്തിലേക്ക് പങ്കുവെക്കാം.*
+
+*താഴെ കാണുന്ന ലിങ്ക് വഴി നിങ്ങളുടെ സന്ദേശങ്ങൾ ഞങ്ങൾക്ക് അയച്ചുതരൂ:*
+🔗 ${submitUrl}
+
+*നമുക്ക് ഒന്നിച്ച് നല്ലൊരു നാളെയെ വാർത്തെടുക്കാം! 🤝*
+🛑*Jeevajyothi Media* 🛑`;
+
+            if (navigator.share) {
+              navigator.share({ title: voice.title, text: fullText }).catch(() => {});
+            } else if (navigator.clipboard) {
+              navigator.clipboard.writeText(fullText).then(() => {
+                try {
+                  window.toastr && window.toastr.info && window.toastr.info('Link copied to clipboard');
+                } catch (e) {}
+              }).catch(() => {
+                const input = document.createElement('input');
+                input.value = fullText;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+              });
+            }
+          });
+        }
+        
+      } catch (error) {
+        console.error('Error loading voice article:', error);
+        document.getElementById('articleContent').innerHTML = '<p style="text-align:center;color:var(--muted);">Error loading article. Please try again.</p>';
+      }
+    }
+    
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    // Load voice article when page loads
+    window.LoaderUtils?.requestLoaderHold();
+    loadVoiceArticle().finally(() => window.LoaderUtils?.releaseLoaderHold());
+
+    // Use history navigation when returning to preserve scroll position
+    const backLink = document.querySelector('.article-actions a[href="voice-hub.html"]');
+    if (backLink) {
+      backLink.addEventListener('click', function (event) {
+        if (document.referrer && document.referrer.includes('voice-hub.html')) {
+          event.preventDefault();
+          window.history.back();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
